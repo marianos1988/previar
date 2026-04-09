@@ -5,7 +5,8 @@
 // ====================================================
 import { clientConfig } from "../config/clientConfig";
 
-const CLIENT_LOGO = clientConfig.brand.logo;
+const logo = clientConfig.brand.logo;
+const CLIENT_LOGO = logo?.src || logo;
 // ====================================================
 ---
 
@@ -13,7 +14,7 @@ const CLIENT_LOGO = clientConfig.brand.logo;
   <div class="nav-bg"></div>
   <div class="candy-pattern"></div>
   <div class="nav-logo" id="navLogo">
-    <span class="logo">{CLIENT_LOGO}</span>
+    <a href="/"><img src={CLIENT_LOGO} alt="Previar" class="logo-img" /></a>
   </div>
   <button class="menu-toggle" id="menuToggle" aria-label="Menú">
     <span class="bar"></span>
@@ -142,8 +143,14 @@ const CLIENT_LOGO = clientConfig.brand.logo;
     display: flex;
   }
 
-  .nav-logo .logo {
-    font-size: 1.5rem;
+  .nav-logo .logo-img {
+    height: 35px;
+    width: auto;
+    object-fit: contain;
+  }
+  
+  .nav-logo a {
+    display: block;
   }
 
   .menu-toggle {
@@ -191,7 +198,7 @@ const CLIENT_LOGO = clientConfig.brand.logo;
     gap: 0.5rem;
     text-decoration: none;
     color: #4a2c2a;
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-body);
     font-size: 0.95rem;
     font-weight: 500;
     transition: all 0.3s ease;

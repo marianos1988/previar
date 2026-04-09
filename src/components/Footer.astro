@@ -5,7 +5,8 @@
 // ====================================================
 import { clientConfig } from "../config/clientConfig";
 
-const CLIENT_LOGO = clientConfig.brand.logo;
+const logo = clientConfig.brand.logo;
+const CLIENT_LOGO = logo?.src || logo;
 const CLIENT_COMPANY_NAME = clientConfig.brand.name;
 const CLIENT_SLOGAN = clientConfig.brand.slogan;
 const SHOP_ADDRESS = clientConfig.contact.address;
@@ -25,7 +26,7 @@ const year = new Date().getFullYear();
     <div class="footer-container">
       <!-- Marca -->
       <div class="footer-section brand-section">
-        <div class="brand-logo">{CLIENT_LOGO}</div>
+        <img src={CLIENT_LOGO} alt={CLIENT_COMPANY_NAME} class="brand-logo" />
         <h3 class="brand-name">{CLIENT_COMPANY_NAME}</h3>
         <p class="brand-tagline">{CLIENT_SLOGAN}</p>
         <div class="brand-decoration"></div>
@@ -118,12 +119,14 @@ const year = new Date().getFullYear();
   }
 
   .brand-logo {
-    font-size: 3.5rem;
+    height: 60px;
+    width: auto;
+    object-fit: contain;
     margin-bottom: 0.5rem;
   }
 
   .brand-name {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: var(--font-title);
     font-size: 1.8rem;
     font-weight: 700;
     color: #fff;
@@ -132,8 +135,8 @@ const year = new Date().getFullYear();
   }
 
   .brand-tagline {
-    font-family: 'Lora', Georgia, serif;
-    font-size: 1rem;
+    font-family: var(--font-subtitle);
+    font-size: 1.1rem;
     color: #a0a0b0;
     margin: 0;
     font-style: italic;
@@ -149,8 +152,8 @@ const year = new Date().getFullYear();
 
   /* Section Title */
   .section-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
+    font-family: var(--font-subtitle);
+    font-size: 1rem;
     font-weight: 600;
     color: #fff;
     margin: 0 0 1.5rem 0;
@@ -171,7 +174,7 @@ const year = new Date().getFullYear();
   }
 
   .footer-link {
-    font-family: 'Lora', Georgia, serif;
+    font-family: var(--font-body);
     color: #b0b0c0;
     text-decoration: none;
     font-size: 0.95rem;
@@ -215,7 +218,7 @@ const year = new Date().getFullYear();
     display: flex;
     align-items: center;
     gap: 1rem;
-    font-family: 'Lora', Georgia, serif;
+    font-family: var(--font-body);
     font-size: 0.9rem;
     color: #b0b0c0;
     line-height: 1.4;
@@ -247,7 +250,7 @@ const year = new Date().getFullYear();
   }
 
   .footer-bottom p {
-    font-family: 'Lora', Georgia, serif;
+    font-family: var(--font-body);
     margin: 0;
     font-size: 0.85rem;
     color: #707090;

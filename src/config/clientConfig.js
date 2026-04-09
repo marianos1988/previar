@@ -5,11 +5,13 @@
 // El WhatsApp se configura en el archivo .env
 // ====================================================
 
+import logoImage from "../assets/web/logo.png";
+
 export const clientConfig = {
   brand: {
     name: "Previar",
-    slogan: "Dulces favoritos",
-    logo: "🍬"
+    slogan: "Tienda de bebidas",
+    logo: logoImage
   },
 
   contact: {
