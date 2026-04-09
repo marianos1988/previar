@@ -1,31 +1,27 @@
 ---
-// ====================================================
-// CONFIGURACIÓN DEL CLIENTE - EDITAR AQUÍ
-// ====================================================
+import logo2 from '../assets/web/logo2.jpg';
 
-// TÍTULO PRINCIPAL
 const WELCOME_TITLE = "Bienvenido a Previar";
 
-// SUBTÍTULO / DESCRIPCIÓN CORTA
-const WELCOME_SUBTITLE = "Tu tienda online de dulces favoritos";
+const WELCOME_SUBTITLE = "Tu distribuidora de bebidas Premium";
 
-// DESCRIPCIÓN LARGA
-const WELCOME_DESCRIPTION = "Descubre un mundo de dulzura y sabor. Мы reunimos las golosinas más deliciosas para ti. Desde chocolates artesanales hasta golosinas clásicas, encuentra tuNext paso favorito y recíbelo directo en tu hogar.";
+const WELCOME_DESCRIPTION = "Descubrí la mejor selección de bebidas Premium. Desde vinos selectos hasta cervezas, whiskeys importados y champagne. Calidad garantizada para tus momentos especiales.";
 
-// TEXTO DEL BOTÓN
-const BUTTON_TEXT = "Explorar Tienda";
+const BUTTON_TEXT = "Ver Catálogo";
 
-// IMAGEN DE BIENVENIDA (puedes cambiarla por una URL de tu imagen)
-const WELCOME_IMAGE = "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=600&h=400&fit=crop";
-
-// ====================================================
+const WELCOME_IMAGE = logo2.src;
 ---
 
 <section class="welcome">
   <div class="welcome-bg"></div>
+  <div class="welcome-accent-top"></div>
+  <div class="welcome-accent-bottom"></div>
+  <div class="bubbles">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
   <div class="welcome-content">
     <div class="welcome-text">
-      <span class="welcome-badge">¡Bienvenido!</span>
+      <span class="welcome-badge">Desde 2020</span>
       <h1 class="welcome-title">{WELCOME_TITLE}</h1>
       <p class="welcome-subtitle">{WELCOME_SUBTITLE}</p>
       <p class="welcome-description">{WELCOME_DESCRIPTION}</p>
@@ -38,11 +34,9 @@ const WELCOME_IMAGE = "https://images.unsplash.com/photo-1582058091505-f87a2e55a
     </div>
     <div class="welcome-image">
       <div class="image-wrapper">
-        <img src={WELCOME_IMAGE} alt="Candy Golosinas" />
-        <div class="image-decoration"></div>
+        <img src={WELCOME_IMAGE} alt="Previar - Bebidas Premium" />
+        <div class="image-glow"></div>
       </div>
-      <div class="floating-candy">🍬</div>
-      <div class="floating-candy-2">🍭</div>
     </div>
   </div>
 </section>
@@ -50,7 +44,7 @@ const WELCOME_IMAGE = "https://images.unsplash.com/photo-1582058091505-f87a2e55a
 <style>
   .welcome {
     position: relative;
-    padding: 4rem 2rem;
+    padding: 5rem 2rem;
     overflow: hidden;
   }
 
@@ -60,8 +54,62 @@ const WELCOME_IMAGE = "https://images.unsplash.com/photo-1582058091505-f87a2e55a
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, #fff9fb 0%, #fff0f5 50%, #fff5f8 100%);
+    background: linear-gradient(180deg, #0d0d0d 0%, #1a1a1a 50%, #151515 100%);
     z-index: -1;
+  }
+
+  .welcome-accent-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+    z-index: -1;
+  }
+
+  .welcome-accent-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+    z-index: -1;
+  }
+
+  .bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    overflow: hidden;
+    opacity: 0.4;
+  }
+
+  .bubbles span {
+    position: absolute;
+    bottom: -50px;
+    width: 6px;
+    height: 6px;
+    background: radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.1), rgba(245, 166, 35, 0.02));
+    border-radius: 50%;
+    animation: rise 15s infinite linear;
+  }
+
+  .bubbles span:nth-child(1) { left: 10%; animation-delay: 0s; }
+  .bubbles span:nth-child(2) { left: 25%; animation-delay: 3s; }
+  .bubbles span:nth-child(3) { left: 50%; animation-delay: 6s; }
+  .bubbles span:nth-child(4) { left: 75%; animation-delay: 9s; }
+  .bubbles span:nth-child(5) { left: 90%; animation-delay: 12s; }
+
+  @keyframes rise {
+    0% { bottom: -50px; opacity: 0; }
+    10% { opacity: 0.3; }
+    50% { opacity: 0.2; }
+    100% { bottom: 100%; opacity: 0; }
   }
 
   .welcome-content {
@@ -69,7 +117,7 @@ const WELCOME_IMAGE = "https://images.unsplash.com/photo-1582058091505-f87a2e55a
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 4rem;
     align-items: center;
   }
 
@@ -90,71 +138,82 @@ const WELCOME_IMAGE = "https://images.unsplash.com/photo-1582058091505-f87a2e55a
 
   .welcome-badge {
     display: inline-block;
-    background: linear-gradient(135deg, #ff6b9d 0%, #c74b7a 100%);
-    color: white;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(245, 166, 35, 0.1) 100%);
+    color: #d4af37;
     font-family: var(--font-body);
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     font-weight: 600;
     padding: 0.5rem 1.25rem;
-    border-radius: 50px;
-    letter-spacing: 1px;
+    border-radius: 4px;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: 1rem;
-    box-shadow: 0 4px 15px rgba(199, 75, 122, 0.3);
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(212, 175, 55, 0.3);
   }
 
   .welcome-title {
     font-family: var(--font-title);
     font-size: 3rem;
     font-weight: 700;
-    color: #c74b7a;
-    margin: 0 0 0.75rem 0;
+    color: #ffffff;
+    margin: 0 0 1rem 0;
     line-height: 1.2;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(180deg, #ffffff 0%, #d4af37 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .welcome-subtitle {
     font-family: var(--font-subtitle);
-    font-size: 1.35rem;
-    font-weight: 500;
-    color: #8b5a6b;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #c9a227;
     margin: 0 0 1.5rem 0;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+    font-style: italic;
   }
 
   .welcome-description {
     font-family: var(--font-body);
-    font-size: 1.05rem;
-    color: #6b4c5a;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
     line-height: 1.8;
     margin: 0 0 2rem 0;
+    max-width: 500px;
   }
 
   .welcome-btn {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    background: linear-gradient(135deg, #ff6b9d 0%, #c74b7a 100%);
-    color: white;
+    background: transparent;
+    color: #d4af37;
     text-decoration: none;
     font-family: var(--font-body);
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 0.9rem;
+    font-weight: 500;
     padding: 1rem 2rem;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 20px rgba(199, 75, 122, 0.35);
+    border-radius: 4px;
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    transition: all 0.4s ease;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
 
   .welcome-btn svg {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     transition: transform 0.3s ease;
   }
 
   .welcome-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(199, 75, 122, 0.45);
+    background: rgba(212, 175, 55, 0.15);
+    border-color: #d4af37;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.2);
   }
 
   .welcome-btn:hover svg {
@@ -179,9 +238,27 @@ const WELCOME_IMAGE = "https://images.unsplash.com/photo-1582058091505-f87a2e55a
 
   .image-wrapper {
     position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 50px rgba(199, 75, 122, 0.2);
+    border-radius: 8px;
+    overflow: visible;
+    box-shadow: 
+      0 25px 50px -12px rgba(0, 0, 0, 0.6),
+      0 12px 24px -8px rgba(0, 0, 0, 0.4),
+      0 0 80px -20px rgba(212, 175, 55, 0.15),
+      0 0 30px -15px rgba(212, 175, 55, 0.1),
+      inset 0 0 0 1px rgba(212, 175, 55, 0.08);
+  }
+
+  .image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), transparent 50%, rgba(245, 166, 35, 0.2));
+    border-radius: 10px;
+    z-index: -1;
+    opacity: 0.5;
   }
 
   .image-wrapper img {
@@ -189,51 +266,27 @@ const WELCOME_IMAGE = "https://images.unsplash.com/photo-1582058091505-f87a2e55a
     height: auto;
     display: block;
     transition: transform 0.5s ease;
+    border-radius: 6px;
   }
 
   .image-wrapper:hover img {
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
 
-  .image-decoration {
+  .image-glow {
     position: absolute;
-    top: -15px;
-    right: -15px;
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, #ffd4e5 0%, #ffb6c1 100%);
-    border-radius: 50%;
-    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, transparent 50%, rgba(245, 166, 35, 0.05) 100%);
+    pointer-events: none;
   }
 
-  .floating-candy {
-    position: absolute;
-    top: -20px;
-    right: 20px;
-    font-size: 2.5rem;
-    animation: floatCandy 3s ease-in-out infinite;
-    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
-  }
-
-  .floating-candy-2 {
-    position: absolute;
-    bottom: 20px;
-    left: -20px;
-    font-size: 2rem;
-    animation: floatCandy 3s ease-in-out infinite 0.5s;
-    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
-  }
-
-  @keyframes floatCandy {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-10px) rotate(5deg); }
-  }
-
-  /* RESPONSIVE */
   @media (max-width: 992px) {
     .welcome-content {
       grid-template-columns: 1fr;
-      gap: 2rem;
+      gap: 3rem;
     }
 
     .welcome-title {
@@ -255,15 +308,14 @@ const WELCOME_IMAGE = "https://images.unsplash.com/photo-1582058091505-f87a2e55a
     }
 
     .welcome-subtitle {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
     }
 
     .welcome-description {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
 
-    .floating-candy,
-    .floating-candy-2 {
+    .bubbles {
       display: none;
     }
   }
@@ -274,12 +326,16 @@ const WELCOME_IMAGE = "https://images.unsplash.com/photo-1582058091505-f87a2e55a
     }
 
     .welcome-title {
-      font-size: 1.75rem;
+      font-size: 1.5rem;
+    }
+
+    .welcome-subtitle {
+      font-size: 1rem;
     }
 
     .welcome-btn {
       padding: 0.85rem 1.5rem;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
     }
   }
 </style>
