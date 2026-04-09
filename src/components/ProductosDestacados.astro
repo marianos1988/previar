@@ -1,73 +1,38 @@
 ---
-// ====================================================
-// CONFIGURACIÓN DEL CLIENTE - EDITAR AQUÍ
-// ====================================================
+import vinoImg from '../assets/productosDestacados/vino.jpg';
 
-// ==========================================
-// CÓMO AGREGAR UN NUEVO PRODUCTO:
-// ==========================================
-// Agregar un nuevo objeto al array PRODUCTS con esta estructura:
-// {
-//   image: "URL de la imagen",
-//   name: "Nombre del producto",
-//   description: "Descripción breve",
-//   price: "Precio",
-//   tag: "tipo"  // opciones: "Más Vendido", "Nuevo", "Oferta", o null (sin tag)
-// }
-
-// ==========================================
-// PRODUCTOS (agregar más aquí)
-// ==========================================
 const PRODUCTS = [
   {
-    image: "https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=400&h=300&fit=crop",
-    name: "Caja de Chocolates Artesanales",
-    description: "Selección de chocolates artesanales con relleno de avellana, caramelo y frutilla. Perfectos para regalar.",
-    price: "$12.99",
-    tag: "Más Vendido"
-  },
-  {
-    image: "https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=400&h=300&fit=crop",
-    name: "Paletas de Colores",
-    description: "Paletas artesanales con sabores frutales. Colores vibrantes y sabores intensos que te encantarán.",
-    price: "$5.99",
-    tag: "Nuevo"
-  },
-  {
-    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=400&h=300&fit=crop",
-    name: "Gomitas Sour Belt",
-    description: "Gomitas ácidas en forma de cinturón. La combinación perfecta de dulzura y acidez.",
-    price: "$3.99",
-    tag: "Oferta"
+    image: vinoImg.src,
+    name: "Vinos Tintos Reserva",
+    description: "Cabernet Sauvignon, Malbec y Merlot de las mejores cosechas."
   },
   {
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
-    name: "Marshmallows Fluffy",
-    description: "Marshmallows suaves y esponjosos. Ideales para bebidas calientes o directamente del paquete.",
-    price: "$4.49",
-    tag: null
+    name: "Champagnes & Espumantes",
+    description: "Champagne, Prosecco y Espumantes Brut y Demi-Sec."
   },
-  // AGREGAR NUEVOS PRODUCTOS AQUÍ ABAJO:
-  // {
-  //   image: "https://images.unsplash.com/...",
-  //   name: "Nuevo Producto",
-  //   description: "Descripción del producto",
-  //   price: "$9.99",
-  //   tag: "Nuevo"  // o "Más Vendido", "Oferta", o null
-  // }
+  {
+    image: "https://images.unsplash.com/photo-1608270586620-248524c67de9?w=400&h=300&fit=crop",
+    name: "Whiskys Premium",
+    description: "Scotch, Bourbon y Rye de ediciones selectas."
+  },
+  {
+    image: "https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=400&h=300&fit=crop",
+    name: "Cervezas de Marcas",
+    description: "Las mejores marcas nacionales e importadas."
+  }
 ];
 
-// TÍTULO DE LA SECCIÓN
-const SECTION_TITLE = "Productos Destacados";
+const SECTION_TITLE = "Catálogo de Productos";
 
-// SUBTÍTULO
-const SECTION_SUBTITLE = "Las golosinas más solicitadas por nuestros clientes";
-
-// ====================================================
+const SECTION_SUBTITLE = "Las mejores bebidas para vos";
 ---
 
 <section class="destacados">
   <div class="destacados-bg"></div>
+  <div class="destacados-accent-top"></div>
+  <div class="destacados-accent-bottom"></div>
   <div class="container">
     <div class="section-header">
       <span class="section-tag">{SECTION_SUBTITLE}</span>
@@ -80,26 +45,11 @@ const SECTION_SUBTITLE = "Las golosinas más solicitadas por nuestros clientes";
         <div class="product-card" style={`animation-delay: ${index * 0.15}s`}>
           <div class="product-image">
             <img src={product.image} alt={product.name} />
-            {product.tag && (
-              <span class={`product-tag tag-${product.tag.toLowerCase().replace(' ', '-')}`}>
-                {product.tag}
-              </span>
-            )}
-            <div class="product-overlay">
-              <button class="quick-view">Ver Detalles</button>
-            </div>
+            <div class="product-glow"></div>
           </div>
           <div class="product-info">
             <h3 class="product-name">{product.name}</h3>
             <p class="product-description">{product.description}</p>
-            <div class="product-footer">
-              <span class="product-price">{product.price}</span>
-              <button class="add-cart">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
-                </svg>
-              </button>
-            </div>
           </div>
         </div>
       ))}
@@ -107,7 +57,7 @@ const SECTION_SUBTITLE = "Las golosinas más solicitadas por nuestros clientes";
     
     <div class="section-cta">
       <a href="/tienda" class="view-all-btn">
-        Ver Todos los Productos
+        Ver Catálogo Completo
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M17 8l4 4m0 0l-4 4m4-4H3"/>
         </svg>
@@ -129,7 +79,27 @@ const SECTION_SUBTITLE = "Las golosinas más solicitadas por nuestros clientes";
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(180deg, #fff5f8 0%, #fff0f5 50%, #fff9fb 100%);
+    background: linear-gradient(180deg, #0d0d0d 0%, #151515 50%, #0d0d0d 100%);
+    z-index: -1;
+  }
+
+  .destacados-accent-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+    z-index: -1;
+  }
+
+  .destacados-accent-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
     z-index: -1;
   }
 
@@ -146,25 +116,28 @@ const SECTION_SUBTITLE = "Las golosinas más solicitadas por nuestros clientes";
   .section-tag {
     display: inline-block;
     font-family: var(--font-body);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 500;
-    color: #c74b7a;
-    letter-spacing: 1px;
-    margin-bottom: 0.5rem;
+    color: #c9a227;
+    letter-spacing: 2px;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
   }
 
   .section-title {
     font-family: var(--font-title);
-    font-size: 2.75rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    color: #4a2c2a;
+    color: #ffffff;
     margin: 0 0 1rem 0;
+    letter-spacing: 3px;
+    text-transform: uppercase;
   }
 
   .section-line {
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, #ff6b9d, #c74b7a);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, #d4af37, #f5a623);
     margin: 0 auto;
     border-radius: 2px;
   }
@@ -177,13 +150,14 @@ const SECTION_SUBTITLE = "Las golosinas más solicitadas por nuestros clientes";
   }
 
   .product-card {
-    background: #fff;
-    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(26, 26, 26, 0.8) 0%, rgba(13, 13, 13, 0.9) 100%);
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(199, 75, 122, 0.1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 175, 55, 0.05);
     transition: all 0.4s ease;
     animation: fadeInUp 0.6s ease-out forwards;
     opacity: 0;
+    border: 1px solid rgba(212, 175, 55, 0.08);
   }
 
   @keyframes fadeInUp {
@@ -198,146 +172,61 @@ const SECTION_SUBTITLE = "Las golosinas más solicitadas por nuestros clientes";
   }
 
   .product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(199, 75, 122, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(212, 175, 55, 0.15);
+    border-color: rgba(212, 175, 55, 0.2);
   }
 
   .product-image {
     position: relative;
     height: 200px;
     overflow: hidden;
+    background: #0a0a0a;
   }
 
   .product-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, opacity 0.3s ease;
+    opacity: 0.85;
   }
 
   .product-card:hover .product-image img {
-    transform: scale(1.1);
+    transform: scale(1.08);
+    opacity: 1;
   }
 
-  .product-tag {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    padding: 0.4rem 0.8rem;
-    border-radius: 20px;
-    font-family: var(--font-body);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-  }
-
-  .tag-más-vendido {
-    background: linear-gradient(135deg, #ff6b9d, #c74b7a);
-    color: white;
-  }
-
-  .tag-nuevo {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-  }
-
-  .tag-oferta {
-    background: linear-gradient(135deg, #f093fb, #f5576c);
-    color: white;
-  }
-
-  .product-overlay {
+  .product-glow {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(199, 75, 122, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .product-card:hover .product-overlay {
-    opacity: 1;
-  }
-
-  .quick-view {
-    background: white;
-    color: #c74b7a;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 25px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    transform: translateY(20px);
-    transition: transform 0.3s ease;
-  }
-
-  .product-card:hover .quick-view {
-    transform: translateY(0);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, transparent 50%, rgba(245, 166, 35, 0.04) 100%);
+    pointer-events: none;
   }
 
   .product-info {
     padding: 1.5rem;
+    text-align: center;
   }
 
   .product-name {
     font-family: var(--font-title);
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    color: #4a2c2a;
-    margin: 0 0 0.5rem 0;
+    color: #ffffff;
+    margin: 0 0 0.75rem 0;
+    letter-spacing: 1px;
   }
 
   .product-description {
     font-family: var(--font-body);
-    font-size: 0.9rem;
-    color: #6b5a5a;
-    line-height: 1.5;
-    margin: 0 0 1rem 0;
-  }
-
-  .product-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .product-price {
-    font-family: var(--font-body);
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #c74b7a;
-  }
-
-  .add-cart {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #ff6b9d, #c74b7a);
-    border: none;
-    color: white;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(199, 75, 122, 0.3);
-  }
-
-  .add-cart svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  .add-cart:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(199, 75, 122, 0.4);
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.6;
+    margin: 0;
   }
 
   .section-cta {
@@ -348,35 +237,37 @@ const SECTION_SUBTITLE = "Las golosinas más solicitadas por nuestros clientes";
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    background: white;
-    color: #c74b7a;
+    background: transparent;
+    color: #d4af37;
     text-decoration: none;
     font-family: var(--font-body);
-    font-size: 1rem;
-    font-weight: 600;
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    border: 2px solid #c74b7a;
-    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    transition: all 0.4s ease;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
 
   .view-all-btn svg {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     transition: transform 0.3s ease;
   }
 
   .view-all-btn:hover {
-    background: linear-gradient(135deg, #ff6b9d, #c74b7a);
-    color: white;
-    border-color: transparent;
+    background: rgba(212, 175, 55, 0.12);
+    border-color: #d4af37;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.15);
   }
 
   .view-all-btn:hover svg {
     transform: translateX(5px);
   }
 
-  /* RESPONSIVE */
   @media (max-width: 992px) {
     .products-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -389,7 +280,7 @@ const SECTION_SUBTITLE = "Las golosinas más solicitadas por nuestros clientes";
     }
 
     .section-title {
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
 
     .products-grid {
@@ -403,12 +294,12 @@ const SECTION_SUBTITLE = "Las golosinas más solicitadas por nuestros clientes";
     }
 
     .section-title {
-      font-size: 1.75rem;
+      font-size: 1.5rem;
     }
 
     .view-all-btn {
       padding: 0.85rem 1.5rem;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
     }
   }
 </style>
