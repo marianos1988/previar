@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import TiendaGeneral from '../components/tienda/TiendaGeneral.jsx';
+import { getCollection } from 'astro:content';
+
+const productsCollection = await getCollection('products');
+
+const products = productsCollection.map((product) => ({
+    id: product.slug,
+    name: product.data.nombre,
+    price: product.data.precio,
+    description: product.body,
+    category: product.data.categoria,
+    images: product.data.images
+}));
+
+const categories = [...new Set(products.map(p => p.category))];
+---
+
+<Layout title="Tienda">
+  <Header />
+  <Navbar />
+  
+  <main>
+    <TiendaGeneral 
+        client:load 
+        categories={categories} 
+        products={products} 
+    />
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  main {
+    min-height: calc(100vh - 200px);
+    background: #fafafa;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+</style>

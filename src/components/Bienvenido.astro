@@ -1,0 +1,285 @@
+---
+// ====================================================
+// CONFIGURACIÓN DEL CLIENTE - EDITAR AQUÍ
+// ====================================================
+
+// TÍTULO PRINCIPAL
+const WELCOME_TITLE = "Bienvenido a Previar";
+
+// SUBTÍTULO / DESCRIPCIÓN CORTA
+const WELCOME_SUBTITLE = "Tu tienda online de dulces favoritos";
+
+// DESCRIPCIÓN LARGA
+const WELCOME_DESCRIPTION = "Descubre un mundo de dulzura y sabor. Мы reunimos las golosinas más deliciosas para ti. Desde chocolates artesanales hasta golosinas clásicas, encuentra tuNext paso favorito y recíbelo directo en tu hogar.";
+
+// TEXTO DEL BOTÓN
+const BUTTON_TEXT = "Explorar Tienda";
+
+// IMAGEN DE BIENVENIDA (puedes cambiarla por una URL de tu imagen)
+const WELCOME_IMAGE = "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=600&h=400&fit=crop";
+
+// ====================================================
+---
+
+<section class="welcome">
+  <div class="welcome-bg"></div>
+  <div class="welcome-content">
+    <div class="welcome-text">
+      <span class="welcome-badge">¡Bienvenido!</span>
+      <h1 class="welcome-title">{WELCOME_TITLE}</h1>
+      <p class="welcome-subtitle">{WELCOME_SUBTITLE}</p>
+      <p class="welcome-description">{WELCOME_DESCRIPTION}</p>
+      <a href="/tienda" class="welcome-btn">
+        <span>{BUTTON_TEXT}</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+    <div class="welcome-image">
+      <div class="image-wrapper">
+        <img src={WELCOME_IMAGE} alt="Candy Golosinas" />
+        <div class="image-decoration"></div>
+      </div>
+      <div class="floating-candy">🍬</div>
+      <div class="floating-candy-2">🍭</div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .welcome {
+    position: relative;
+    padding: 4rem 2rem;
+    overflow: hidden;
+  }
+
+  .welcome-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #fff9fb 0%, #fff0f5 50%, #fff5f8 100%);
+    z-index: -1;
+  }
+
+  .welcome-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .welcome-text {
+    animation: slideInLeft 0.8s ease-out;
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .welcome-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff6b9d 0%, #c74b7a 100%);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 15px rgba(199, 75, 122, 0.3);
+  }
+
+  .welcome-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #c74b7a;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.2;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+  }
+
+  .welcome-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: #8b5a6b;
+    margin: 0 0 1.5rem 0;
+    letter-spacing: 0.5px;
+  }
+
+  .welcome-description {
+    font-family: 'Lora', serif;
+    font-size: 1.05rem;
+    color: #6b4c5a;
+    line-height: 1.8;
+    margin: 0 0 2rem 0;
+  }
+
+  .welcome-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, #ff6b9d 0%, #c74b7a 100%);
+    color: white;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(199, 75, 122, 0.35);
+  }
+
+  .welcome-btn svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+  }
+
+  .welcome-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(199, 75, 122, 0.45);
+  }
+
+  .welcome-btn:hover svg {
+    transform: translateX(5px);
+  }
+
+  .welcome-image {
+    position: relative;
+    animation: slideInRight 0.8s ease-out;
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .image-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(199, 75, 122, 0.2);
+  }
+
+  .image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .image-wrapper:hover img {
+    transform: scale(1.05);
+  }
+
+  .image-decoration {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #ffd4e5 0%, #ffb6c1 100%);
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  .floating-candy {
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    font-size: 2.5rem;
+    animation: floatCandy 3s ease-in-out infinite;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
+  }
+
+  .floating-candy-2 {
+    position: absolute;
+    bottom: 20px;
+    left: -20px;
+    font-size: 2rem;
+    animation: floatCandy 3s ease-in-out infinite 0.5s;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
+  }
+
+  @keyframes floatCandy {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 992px) {
+    .welcome-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .welcome-title {
+      font-size: 2.5rem;
+    }
+
+    .welcome-image {
+      order: -1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .welcome {
+      padding: 3rem 1.5rem;
+    }
+
+    .welcome-title {
+      font-size: 2rem;
+    }
+
+    .welcome-subtitle {
+      font-size: 1.1rem;
+    }
+
+    .welcome-description {
+      font-size: 0.95rem;
+    }
+
+    .floating-candy,
+    .floating-candy-2 {
+      display: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .welcome {
+      padding: 2rem 1rem;
+    }
+
+    .welcome-title {
+      font-size: 1.75rem;
+    }
+
+    .welcome-btn {
+      padding: 0.85rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>

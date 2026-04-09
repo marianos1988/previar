@@ -1,0 +1,70 @@
+.btn-back {
+  position: relative;
+  background: linear-gradient(135deg, #3d2232 0%, #5a3a4a 100%);
+  color: #fff;
+  text-decoration: none;
+  height: 40px;
+  width: 45px;
+  border: none;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-back:hover {
+  background: linear-gradient(135deg, #c74b7a 0%, #ff8fb3 100%);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(199, 75, 122, 0.35);
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.btn-back:active {
+  transform: scale(1);
+}
+
+.btn-back span {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-back span svg {
+  width: 22px;
+  height: 22px;
+}
+
+.btn-back i {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .btn-back {
+    height: 36px;
+    width: 40px;
+    border-radius: 18px;
+  }
+
+  .btn-back span svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-back {
+    height: 32px;
+    width: 36px;
+    border-radius: 16px;
+  }
+
+  .btn-back span svg {
+    width: 18px;
+    height: 18px;
+  }
+}

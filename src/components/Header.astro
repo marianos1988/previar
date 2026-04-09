@@ -1,0 +1,139 @@
+---
+// ====================================================
+// CONFIGURACIÓN CENTRALIZADA
+// Todos los datos del cliente están en src/config/clientConfig.js
+// ====================================================
+import { clientConfig } from "../config/clientConfig";
+
+const CLIENT_LOGO = clientConfig.brand.logo;
+const CLIENT_COMPANY_NAME = clientConfig.brand.name;
+const CLIENT_SLOGAN = clientConfig.brand.slogan;
+// ====================================================
+---
+
+<header class="header">
+  <div class="header-bg"></div>
+  <div class="candy-pattern"></div>
+  <div class="brand">
+    <div class="logo">{CLIENT_LOGO}</div>
+    <div class="brand-info">
+      <span class="company-name">{CLIENT_COMPANY_NAME}</span>
+      <span class="slogan">{CLIENT_SLOGAN}</span>
+    </div>
+  </div>
+</header>
+
+<style is:global>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+</style>
+
+<style>
+  .header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1.5rem;
+    overflow: hidden;
+    min-height: 120px;
+  }
+
+  .header-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe4e8 50%, #fff0f5 100%);
+    z-index: -2;
+  }
+
+  .candy-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0.4;
+    background-image: 
+      radial-gradient(circle at 10% 20%, #ffb6c1 2px, transparent 2px),
+      radial-gradient(circle at 90% 80%, #ffb6c1 2px, transparent 2px),
+      radial-gradient(circle at 30% 70%, #ffd4e5 2px, transparent 2px),
+      radial-gradient(circle at 70% 30%, #ffd4e5 2px, transparent 2px),
+      radial-gradient(circle at 50% 50%, #ff9ecd 1.5px, transparent 1.5px);
+    background-size: 60px 60px, 80px 80px, 50px 50px, 70px 70px, 40px 40px;
+  }
+
+  .brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .logo {
+    font-size: 3.5rem;
+    filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.2));
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  .brand-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .company-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #c74b7a;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+  }
+
+  .slogan {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #8b5a6b;
+    letter-spacing: 1px;
+    margin-top: 0.25rem;
+  }
+
+  /* MOBILE (< 768px) */
+  @media (max-width: 768px) {
+    .header {
+      padding: 1.5rem 1rem;
+      min-height: 100px;
+    }
+    .logo {
+      font-size: 2.5rem;
+    }
+    .company-name {
+      font-size: 1.5rem;
+    }
+    .slogan {
+      font-size: 0.85rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .logo {
+      font-size: 2rem;
+    }
+    .company-name {
+      font-size: 1.25rem;
+    }
+    .slogan {
+      font-size: 0.75rem;
+    }
+  }
+</style>

@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import FormularioConsultas from '../components/FormularioConsultas.tsx';
+import Ubicacion from '../components/Ubicacion.astro';
+---
+
+<Layout title="Contacto">
+  <Header />
+  <Navbar />
+  
+  <main>
+    <section class="contacto">
+      <FormularioConsultas client:only="react" />
+    </section>
+    <Ubicacion />
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  main {
+    min-height: calc(100vh - 200px);
+  }
+  
+  .contacto {
+    padding: 4rem 2rem;
+  }
+</style>

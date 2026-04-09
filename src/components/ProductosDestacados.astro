@@ -1,0 +1,414 @@
+---
+// ====================================================
+// CONFIGURACIÓN DEL CLIENTE - EDITAR AQUÍ
+// ====================================================
+
+// ==========================================
+// CÓMO AGREGAR UN NUEVO PRODUCTO:
+// ==========================================
+// Agregar un nuevo objeto al array PRODUCTS con esta estructura:
+// {
+//   image: "URL de la imagen",
+//   name: "Nombre del producto",
+//   description: "Descripción breve",
+//   price: "Precio",
+//   tag: "tipo"  // opciones: "Más Vendido", "Nuevo", "Oferta", o null (sin tag)
+// }
+
+// ==========================================
+// PRODUCTOS (agregar más aquí)
+// ==========================================
+const PRODUCTS = [
+  {
+    image: "https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=400&h=300&fit=crop",
+    name: "Caja de Chocolates Artesanales",
+    description: "Selección de chocolates artesanales con relleno de avellana, caramelo y frutilla. Perfectos para regalar.",
+    price: "$12.99",
+    tag: "Más Vendido"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=400&h=300&fit=crop",
+    name: "Paletas de Colores",
+    description: "Paletas artesanales con sabores frutales. Colores vibrantes y sabores intensos que te encantarán.",
+    price: "$5.99",
+    tag: "Nuevo"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=400&h=300&fit=crop",
+    name: "Gomitas Sour Belt",
+    description: "Gomitas ácidas en forma de cinturón. La combinación perfecta de dulzura y acidez.",
+    price: "$3.99",
+    tag: "Oferta"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+    name: "Marshmallows Fluffy",
+    description: "Marshmallows suaves y esponjosos. Ideales para bebidas calientes o directamente del paquete.",
+    price: "$4.49",
+    tag: null
+  },
+  // AGREGAR NUEVOS PRODUCTOS AQUÍ ABAJO:
+  // {
+  //   image: "https://images.unsplash.com/...",
+  //   name: "Nuevo Producto",
+  //   description: "Descripción del producto",
+  //   price: "$9.99",
+  //   tag: "Nuevo"  // o "Más Vendido", "Oferta", o null
+  // }
+];
+
+// TÍTULO DE LA SECCIÓN
+const SECTION_TITLE = "Productos Destacados";
+
+// SUBTÍTULO
+const SECTION_SUBTITLE = "Las golosinas más solicitadas por nuestros clientes";
+
+// ====================================================
+---
+
+<section class="destacados">
+  <div class="destacados-bg"></div>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">{SECTION_SUBTITLE}</span>
+      <h2 class="section-title">{SECTION_TITLE}</h2>
+      <div class="section-line"></div>
+    </div>
+    
+    <div class="products-grid">
+      {PRODUCTS.map((product, index) => (
+        <div class="product-card" style={`animation-delay: ${index * 0.15}s`}>
+          <div class="product-image">
+            <img src={product.image} alt={product.name} />
+            {product.tag && (
+              <span class={`product-tag tag-${product.tag.toLowerCase().replace(' ', '-')}`}>
+                {product.tag}
+              </span>
+            )}
+            <div class="product-overlay">
+              <button class="quick-view">Ver Detalles</button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">{product.name}</h3>
+            <p class="product-description">{product.description}</p>
+            <div class="product-footer">
+              <span class="product-price">{product.price}</span>
+              <button class="add-cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="section-cta">
+      <a href="/tienda" class="view-all-btn">
+        Ver Todos los Productos
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .destacados {
+    position: relative;
+    padding: 5rem 2rem;
+    overflow: hidden;
+  }
+
+  .destacados-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, #fff5f8 0%, #fff0f5 50%, #fff9fb 100%);
+    z-index: -1;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-tag {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #c74b7a;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: #4a2c2a;
+    margin: 0 0 1rem 0;
+  }
+
+  .section-line {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b9d, #c74b7a);
+    margin: 0 auto;
+    border-radius: 2px;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .product-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(199, 75, 122, 0.1);
+    transition: all 0.4s ease;
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(199, 75, 122, 0.2);
+  }
+
+  .product-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .product-card:hover .product-image img {
+    transform: scale(1.1);
+  }
+
+  .product-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .tag-más-vendido {
+    background: linear-gradient(135deg, #ff6b9d, #c74b7a);
+    color: white;
+  }
+
+  .tag-nuevo {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+  }
+
+  .tag-oferta {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    color: white;
+  }
+
+  .product-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(199, 75, 122, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .product-card:hover .product-overlay {
+    opacity: 1;
+  }
+
+  .quick-view {
+    background: white;
+    color: #c74b7a;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+  }
+
+  .product-card:hover .quick-view {
+    transform: translateY(0);
+  }
+
+  .product-info {
+    padding: 1.5rem;
+  }
+
+  .product-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #4a2c2a;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .product-description {
+    font-family: 'Lora', serif;
+    font-size: 0.9rem;
+    color: #6b5a5a;
+    line-height: 1.5;
+    margin: 0 0 1rem 0;
+  }
+
+  .product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .product-price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #c74b7a;
+  }
+
+  .add-cart {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff6b9d, #c74b7a);
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(199, 75, 122, 0.3);
+  }
+
+  .add-cart svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .add-cart:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(199, 75, 122, 0.4);
+  }
+
+  .section-cta {
+    text-align: center;
+  }
+
+  .view-all-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: white;
+    color: #c74b7a;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    border: 2px solid #c74b7a;
+    transition: all 0.3s ease;
+  }
+
+  .view-all-btn svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+  }
+
+  .view-all-btn:hover {
+    background: linear-gradient(135deg, #ff6b9d, #c74b7a);
+    color: white;
+    border-color: transparent;
+  }
+
+  .view-all-btn:hover svg {
+    transform: translateX(5px);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 992px) {
+    .products-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .destacados {
+      padding: 3rem 1.5rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .products-grid {
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .products-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+    }
+
+    .view-all-btn {
+      padding: 0.85rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
