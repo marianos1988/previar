@@ -76,13 +76,26 @@ const CLIENT_LOGO = logo?.src || logo;
   navOverlay?.addEventListener('click', closeMenu);
 
   let lastScroll = 0;
+  const navbar = document.getElementById('mainNavbar');
+  const footer = document.querySelector('footer');
+
   window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
+    const footerRect = footer?.getBoundingClientRect();
+    const isFooterVisible = footerRect && footerRect.top < window.innerHeight;
+    
     if (currentScroll > 50) {
       navLogo?.classList.add('visible');
     } else {
       navLogo?.classList.remove('visible');
     }
+
+    if (isFooterVisible) {
+      navbar?.classList.add('hidden');
+    } else {
+      navbar?.classList.remove('hidden');
+    }
+    
     lastScroll = currentScroll;
   });
 </script>
@@ -98,6 +111,11 @@ const CLIENT_LOGO = logo?.src || logo;
     z-index: 1000;
     min-height: 70px;
     overflow: hidden;
+    transition: transform 0.4s ease;
+  }
+
+  .navbar.hidden {
+    transform: translateY(-100%);
   }
 
   .nav-bg {
