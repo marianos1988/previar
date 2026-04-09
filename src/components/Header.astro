@@ -10,8 +10,17 @@ const CLIENT_SLOGAN = clientConfig.brand.slogan;
 <header class="header">
   <div class="header-bg"></div>
   <div class="header-accent"></div>
-  <div class="bubbles">
-    <span></span><span></span><span></span><span></span><span></span>
+  <div class="bubbles" aria-hidden="true">
+    <span style="left: 5%; animation-delay: 0s;"></span>
+    <span style="left: 15%; animation-delay: 2s;"></span>
+    <span style="left: 25%; animation-delay: 4s;"></span>
+    <span style="left: 35%; animation-delay: 6s;"></span>
+    <span style="left: 45%; animation-delay: 8s;"></span>
+    <span style="left: 55%; animation-delay: 1s;"></span>
+    <span style="left: 65%; animation-delay: 3s;"></span>
+    <span style="left: 75%; animation-delay: 5s;"></span>
+    <span style="left: 85%; animation-delay: 7s;"></span>
+    <span style="left: 95%; animation-delay: 9s;"></span>
   </div>
   <div class="container">
     <div class="brand">
@@ -40,7 +49,7 @@ const CLIENT_SLOGAN = clientConfig.brand.slogan;
 <style>
   .header {
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     min-height: 200px;
   }
 
@@ -51,7 +60,7 @@ const CLIENT_SLOGAN = clientConfig.brand.slogan;
     right: 0;
     bottom: 0;
     background: linear-gradient(180deg, #0d0d0d 0%, #1a1a1a 50%, #1f1f1f 100%);
-    z-index: -3;
+    z-index: 0;
   }
 
   .header-accent {
@@ -61,7 +70,7 @@ const CLIENT_SLOGAN = clientConfig.brand.slogan;
     right: 0;
     height: 4px;
     background: linear-gradient(90deg, #d4af37 0%, #f5a623 50%, #d4af37 100%);
-    z-index: -1;
+    z-index: 1;
   }
 
   .bubbles {
@@ -70,18 +79,17 @@ const CLIENT_SLOGAN = clientConfig.brand.slogan;
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: -2;
-    overflow: hidden;
+    z-index: 2;
+    pointer-events: none;
   }
 
   .bubbles span {
     position: absolute;
-    bottom: -50px;
-    width: 8px;
-    height: 8px;
-    background: radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.08), rgba(245, 166, 35, 0.02));
+    width: 16px;
+    height: 16px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.8) 0%, rgba(245, 166, 35, 0.3) 70%, transparent 100%);
     border-radius: 50%;
-    animation: rise 18s infinite linear;
+    animation: rise 10s infinite linear;
   }
 
   .bubbles span:nth-child(1) { left: 5%; animation-delay: 0s; }
@@ -96,11 +104,10 @@ const CLIENT_SLOGAN = clientConfig.brand.slogan;
   .bubbles span:nth-child(10) { left: 95%; animation-delay: 14s; }
 
   @keyframes rise {
-    0% { bottom: -50px; opacity: 0; }
-    10% { opacity: 0.3; }
-    50% { opacity: 0.2; }
-    90% { opacity: 0.3; }
-    100% { bottom: 100%; opacity: 0; }
+    0% { transform: translateY(50px); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-300px); opacity: 0; }
   }
 
   .container {
@@ -164,13 +171,14 @@ const CLIENT_SLOGAN = clientConfig.brand.slogan;
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    z-index: 3;
   }
 
   .tagline-text {
     font-family: var(--font-subtitle);
     font-size: 0.9rem;
     font-weight: 500;
-    color: #888;
+    color: #c9a227;
     letter-spacing: 1px;
     text-transform: uppercase;
   }
@@ -218,10 +226,6 @@ const CLIENT_SLOGAN = clientConfig.brand.slogan;
     }
 
     .header-tagline {
-      display: none;
-    }
-
-    .bubbles {
       display: none;
     }
   }
