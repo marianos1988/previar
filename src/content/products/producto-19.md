@@ -1,6 +1,6 @@
 ---
         nombre: Vino Espumante Prosecco
-        precio: 2900
+        precio: 22000
         images: 
                 img1: champagne.jpg
         categoria: Espumantes

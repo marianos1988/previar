@@ -1,6 +1,6 @@
 ---
         nombre: Whisky Bourbon
-        precio: 7200
+        precio: 25000
         images: 
                 img1: whisky.jpg
         categoria: Whiskys

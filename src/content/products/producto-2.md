@@ -1,6 +1,6 @@
 ---
         nombre: Vino Blanco Sauvignon Blanc
-        precio: 2200
+        precio: 8000
         images: 
                 img1: vino.jpg
         

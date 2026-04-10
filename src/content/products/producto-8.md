@@ -1,6 +1,6 @@
 ---
         nombre: Champagne Brut
-        precio: 3500
+        precio: 20000
         images: 
                 img1: champagne.jpg
         categoria: Espumantes

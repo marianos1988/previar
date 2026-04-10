@@ -1,6 +1,6 @@
 ---
         nombre: Whisky Irlandés
-        precio: 6800
+        precio: 65000
         images: 
                 img1: whisky.jpg
         categoria: Whiskys

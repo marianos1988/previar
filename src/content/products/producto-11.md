@@ -1,6 +1,6 @@
 ---
         nombre: Pisco Sour
-        precio: 2500
+        precio: 50000
         images: 
                 img1: whisky.jpg
         categoria: Cócteles

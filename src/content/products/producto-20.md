@@ -1,6 +1,6 @@
 ---
         nombre: Cerveza de Trigo
-        precio: 950
+        precio: 4000
         images: 
                 img1: cerveza.jpg
         categoria: Cervezas

@@ -1,6 +1,6 @@
 ---
         nombre: Espumante Rosado
-        precio: 3200
+        precio: 21000
         images: 
                 img1: champagne.jpg
         categoria: Espumantes

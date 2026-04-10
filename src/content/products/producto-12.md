@@ -1,6 +1,6 @@
 ---
         nombre: Gin Tonic
-        precio: 2200
+        precio: 29000
         images: 
                 img1: whisky.jpg
         categoria: Cócteles

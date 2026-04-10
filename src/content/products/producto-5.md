@@ -1,6 +1,6 @@
 ---
         nombre: Cerveza Roja IPA
-        precio: 900
+        precio: 2100
         images: 
                 img1: cerveza.jpg
         categoria: Cervezas

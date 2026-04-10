@@ -1,6 +1,6 @@
 ---
         nombre: Cerveza Rubia Lager
-        precio: 800
+        precio: 2000
         images: 
                 img1: cerveza.jpg
         categoria: Cervezas

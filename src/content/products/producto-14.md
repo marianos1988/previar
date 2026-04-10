@@ -1,6 +1,6 @@
 ---
         nombre: Vino Blanco Chardonnay
-        precio: 2600
+        precio: 14500
         images: 
                 img1: vino.jpg
         categoria: Vinos

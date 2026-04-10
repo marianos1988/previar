@@ -1,6 +1,6 @@
 ---
         nombre: Mojito
-        precio: 2600
+        precio: 27000
         images: 
                 img1: whisky.jpg
         categoria: Cócteles

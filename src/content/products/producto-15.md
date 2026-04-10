@@ -1,6 +1,6 @@
 ---
         nombre: Cerveza Negra Stout
-        precio: 1000
+        precio: 1300
         images: 
                 img1: cerveza.jpg
         categoria: Cervezas

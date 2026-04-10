@@ -1,6 +1,6 @@
 ---
         nombre: Vino Rosado Pinot Noir
-        precio: 2800
+        precio: 7500
         images: 
                 img1: vino.jpg
         

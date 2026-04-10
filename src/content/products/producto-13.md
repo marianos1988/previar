@@ -1,6 +1,6 @@
 ---
         nombre: Vino Tinto Cabernet Sauvignon
-        precio: 3000
+        precio: 18000
         images: 
                 img1: vino.jpg
         categoria: Vinos

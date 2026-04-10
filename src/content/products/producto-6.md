@@ -1,6 +1,6 @@
 ---
         nombre: Whisky Escocés 12 Años
-        precio: 8500
+        precio: 30000
         images: 
                 img1: whisky.jpg
         categoria: Whiskys

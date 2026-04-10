@@ -1,6 +1,6 @@
 ---
         nombre: Moscow Mule
-        precio: 2800
+        precio: 42000
         images: 
                 img1: whisky.jpg
         categoria: Cócteles

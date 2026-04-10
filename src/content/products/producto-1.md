@@ -1,6 +1,6 @@
 ---
         nombre: Vino Tinto Malbec
-        precio: 2500
+        precio: 8000
         images: 
                 img1: vino.jpg
         

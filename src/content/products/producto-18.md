@@ -1,6 +1,6 @@
 ---
         nombre: Caipiriña
-        precio: 2400
+        precio: 18000
         images: 
                 img1: whisky.jpg
         categoria: Cócteles
