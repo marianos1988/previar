@@ -7,14 +7,23 @@ import FormularioConsultas from '../components/FormularioConsultas.tsx';
 import Ubicacion from '../components/Ubicacion.astro';
 ---
 
-<Layout title="Contacto">
+<Layout title="Contacto - Previar">
   <Header />
   <Navbar />
   
   <main>
+    <section class="contacto-hero">
+      <div class="contacto-bg"></div>
+      <div class="contacto-content">
+        <h1 class="contacto-title">Contacto</h1>
+        <p class="contacto-subtitle">Estamos para ayudarte</p>
+      </div>
+    </section>
+
     <section class="contacto">
       <FormularioConsultas client:only="react" />
     </section>
+    
     <Ubicacion />
   </main>
 
@@ -25,8 +34,66 @@ import Ubicacion from '../components/Ubicacion.astro';
   main {
     min-height: calc(100vh - 200px);
   }
-  
+
+  .contacto-hero {
+    position: relative;
+    padding: 4rem 2rem;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .contacto-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, #0d0d0d 0%, #151515 50%, #0d0d0d 100%);
+    z-index: -1;
+  }
+
+  .contacto-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .contacto-title {
+    font-family: var(--font-title);
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  .contacto-subtitle {
+    font-family: var(--font-subtitle);
+    font-size: 1.2rem;
+    color: rgba(212, 175, 55, 0.8);
+    margin: 0;
+    font-style: italic;
+  }
+
   .contacto {
     padding: 4rem 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .contacto-hero {
+      padding: 3rem 1.5rem;
+    }
+
+    .contacto-title {
+      font-size: 2rem;
+    }
+
+    .contacto-subtitle {
+      font-size: 1rem;
+    }
+
+    .contacto {
+      padding: 3rem 1rem;
+    }
   }
 </style>

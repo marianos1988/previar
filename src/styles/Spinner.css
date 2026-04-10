@@ -9,7 +9,7 @@
 .spinner-dots span {
   width: 12px;
   height: 12px;
-  background: #c74b7a;
+  background: #d4af37;
   border-radius: 50%;
   animation: bounce 1.4s infinite ease-in-out both;
 }

@@ -2,10 +2,6 @@ import { useState, type FormEvent, type ChangeEvent } from 'react';
 import '../styles/FormularioConsultas.css';
 import Spinner from './Spinner';
 
-// ====================================================
-// CONFIGURACIÓN DEL CLIENTE - EDITAR AQUÍ
-// ====================================================
-
 interface FormData {
   nombre: string;
   email: string;
@@ -24,8 +20,6 @@ interface Message {
   message: string;
   color: string;
 }
-
-// ====================================================
 
 export default function FormularioConsultas() {
 
@@ -127,7 +121,7 @@ export default function FormularioConsultas() {
 
 
         setStateSpinner(true);
-        const JSONSubmit = await fetch("https://formsubmit.co/ajax/mariano.floresta2@gmail.com", objectSubmit);
+        const JSONSubmit = await fetch("https://formsubmit.co/ajax/previar.oficial@gmail.com", objectSubmit);
         const data = await JSONSubmit.json();
         setStateSpinner(false);
 
@@ -154,11 +148,11 @@ export default function FormularioConsultas() {
 
   return (
     <div className="formulario-container">
-      <div className="formulario-header">
-        <span className="formulario-badge">¿Necesitas ayuda?</span>
-        <h2 className="formulario-title">Contáctanos</h2>
-        <p className="formulario-subtitle">
-          Escríbenos tu consulta y te responderemos a la brevedad
+      <div className="form-header">
+        <span className="form-badge">Contáctanos</span>
+        <h2 className="form-title">Envíanos tu consulta</h2>
+        <p className="form-subtitle">
+          Estamos para ayudarte. Escribinos y te responderemos a la brevedad
         </p>
       </div> 
 
@@ -228,7 +222,7 @@ export default function FormularioConsultas() {
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
           </svg>
-          Enviar Consulta
+          Enviar Mensaje
         </button>
 
         <Spinner 
@@ -237,15 +231,10 @@ export default function FormularioConsultas() {
         
         {message.message && (
           <div className='box-message'>
-            <h3 style={{ color: message.color }}>{message.message}</h3>
+            <h3 className={message.color}>{message.message}</h3>
           </div>
         )}
       </form>
-
-      <div className="form-decoration">
-        <span className="candy-emoji">🍭</span>
-        <span className="candy-emoji-2">🍬</span>
-      </div>
     </div>
   );
 }

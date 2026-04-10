@@ -2,11 +2,12 @@
   position: relative;
   max-width: 600px;
   margin: 0 auto;
-  padding: 3rem 2rem;
-  background: linear-gradient(135deg, #fff5f8 0%, #fff0f5 100%);
-  border-radius: 24px;
-  box-shadow: 0 20px 50px rgba(199, 75, 122, 0.15);
+  padding: 4rem 2rem;
+  background: linear-gradient(180deg, #151515 0%, #0d0d0d 100%);
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 30px rgba(212, 175, 55, 0.08);
   overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.1);
 }
 
 .formulario-container::before {
@@ -16,54 +17,58 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
-    radial-gradient(circle at 10% 20%, #ffd4e5 1px, transparent 1px),
-    radial-gradient(circle at 90% 80%, #ffd4e5 1px, transparent 1px),
-    radial-gradient(circle at 50% 50%, #ffb6c1 1px, transparent 1px);
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+    radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+    radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.02) 1px, transparent 1px);
   background-size: 40px 40px, 50px 50px, 30px 30px;
-  opacity: 0.5;
   pointer-events: none;
 }
 
-.formulario-header {
+.form-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   position: relative;
 }
 
-.formulario-badge {
+.form-badge {
   display: inline-block;
-  background: linear-gradient(135deg, #ff6b9d 0%, #c74b7a 100%);
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.8rem;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(245, 166, 35, 0.1) 100%);
+  color: #d4af37;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
   font-weight: 600;
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  letter-spacing: 0.5px;
-  margin-bottom: 0.75rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
-.formulario-title {
-  font-family: 'Playfair Display', serif;
+.form-title {
+  font-family: var(--font-title);
   font-size: 2rem;
   font-weight: 700;
-  color: #c74b7a;
-  margin: 0 0 0.5rem 0;
+  color: #ffffff;
+  margin: 0 0 0.75rem 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
-.formulario-subtitle {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.95rem;
-  color: #6b5a5a;
+.form-subtitle {
+  font-family: var(--font-subtitle);
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
   margin: 0;
+  font-style: italic;
 }
 
 .formulario {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .form-row {
@@ -79,39 +84,42 @@
 }
 
 .form-label {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #4a2c2a;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .form-input,
 .form-textarea {
-  font-family: 'Lora', serif;
+  font-family: var(--font-body);
   font-size: 0.95rem;
-  padding: 0.9rem 1rem;
-  border: 2px solid rgba(199, 75, 122, 0.2);
-  border-radius: 12px;
-  background: white;
-  color: #4a2c2a;
+  padding: 1rem;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
   transition: all 0.3s ease;
   outline: none;
 }
 
 .form-input::placeholder,
 .form-textarea::placeholder {
-  color: #aaa;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .form-input:focus,
 .form-textarea:focus {
-  border-color: #c74b7a;
-  box-shadow: 0 0 0 4px rgba(199, 75, 122, 0.1);
+  border-color: #d4af37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .form-input.error,
 .form-textarea.error {
-  border-color: #e74b7a;
+  border-color: #e74c3c;
 }
 
 .form-textarea {
@@ -120,9 +128,9 @@
 }
 
 .form-error {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.75rem;
-  color: #e74b7a;
+color: #e74c3c;
   margin-top: 0.25rem;
   min-height: 1rem;
   opacity: 0;
@@ -138,11 +146,12 @@
   align-items: center;
   gap: 0.75rem;
   padding: 1rem;
-  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
-  border-radius: 12px;
-  color: #155724;
-  font-family: 'Montserrat', sans-serif;
+  background: rgba(34, 139, 34, 0.15);
+  border-radius: 4px;
+  color: #22c55e;
+  font-family: var(--font-body);
   font-size: 0.9rem;
+  border: 1px solid rgba(34, 139, 34, 0.3);
 }
 
 .form-success svg {
@@ -156,11 +165,12 @@
   align-items: center;
   gap: 0.75rem;
   padding: 1rem;
-  background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
-  border-radius: 12px;
-  color: #721c24;
-  font-family: 'Montserrat', sans-serif;
+  background: rgba(220, 38, 38, 0.15);
+  border-radius: 4px;
+  color: #ef4444;
+  font-family: var(--font-body);
   font-size: 0.9rem;
+  border: 1px solid rgba(220, 38, 38, 0.3);
 }
 
 .form-error-global svg {
@@ -174,27 +184,30 @@
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  background: linear-gradient(135deg, #ff6b9d 0%, #c74b7a 100%);
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
+  background: transparent;
+  color: #d4af37;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
   padding: 1rem 2rem;
-  border: none;
-  border-radius: 50px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  border-radius: 4px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 20px rgba(199, 75, 122, 0.35);
+  transition: all 0.4s ease;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .form-submit svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 }
 
 .form-submit:hover:not(:disabled) {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(199, 75, 122, 0.45);
+  background: rgba(212, 175, 55, 0.15);
+  border-color: #d4af37;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2);
 }
 
 .form-submit:disabled {
@@ -205,31 +218,37 @@
 .box-message {
   margin-top: 1rem;
   padding: 1rem;
-  border-radius: 12px;
+  border-radius: 4px;
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-body);
+  border: 1px solid;
 }
 
 .box-message h3 {
   margin: 0;
   font-size: 1rem;
+  font-weight: 600;
 }
 
 .box-message h3.green {
   text-transform: uppercase;
-  color: #155724;
+  color: #22c55e;
+  border-color: rgba(34, 139, 34, 0.3);
+  background: rgba(34, 139, 34, 0.1);
 }
 
 .box-message h3.red {
   text-transform: uppercase;
-  color: #ff0019;
+  color: #ef4444;
+  border-color: rgba(220, 38, 38, 0.3);
+  background: rgba(220, 38, 38, 0.1);
 }
 
 .loading-spinner {
   width: 20px;
   height: 20px;
   border: 2px solid rgba(255, 255, 255, 0.3);
-  border-top-color: white;
+  border-top-color: #d4af37;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
@@ -238,63 +257,28 @@
   to { transform: rotate(360deg); }
 }
 
-.form-decoration {
-  position: absolute;
-  top: 50%;
-  right: -10px;
-  transform: translateY(-50%);
-}
-
-.candy-emoji {
-  position: absolute;
-  top: -60px;
-  right: 20px;
-  font-size: 2rem;
-  animation: floatCandy 3s ease-in-out infinite;
-  filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));
-}
-
-.candy-emoji-2 {
-  position: absolute;
-  bottom: -40px;
-  right: 40px;
-  font-size: 1.5rem;
-  animation: floatCandy 3s ease-in-out infinite 0.5s;
-  filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));
-}
-
-@keyframes floatCandy {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
 /* Responsive */
 @media (max-width: 768px) {
   .formulario-container {
-    padding: 2rem 1.5rem;
+    padding: 3rem 1.5rem;
   }
 
   .form-row {
     grid-template-columns: 1fr;
   }
 
-  .formulario-title {
-    font-size: 1.75rem;
-  }
-
-  .candy-emoji,
-  .candy-emoji-2 {
-    display: none;
+  .form-title {
+    font-size: 1.6rem;
   }
 }
 
 @media (max-width: 480px) {
   .formulario-container {
-    padding: 1.5rem 1rem;
+    padding: 2rem 1rem;
   }
 
   .form-submit {
     padding: 0.85rem 1.5rem;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 }
