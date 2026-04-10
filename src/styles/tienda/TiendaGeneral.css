@@ -26,17 +26,17 @@
     padding: 0.75rem 1rem;
     width: 100%;
     box-sizing: border-box;
-    background: linear-gradient(135deg, #fff5f7 0%, #fff0f3 100%);
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
     z-index: 20;
-    border-bottom: 1px solid rgba(199, 75, 122, 0.1);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
 }
 
 .sec-tittles h1 {
     width: 100%;
-    color: #3d2232;
+    color: #d4af37;
     text-align: left;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.75rem;
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
     font-weight: 600;
     letter-spacing: 1.5px;
     margin: 0 0 0.35rem 0;
@@ -44,9 +44,9 @@
 
 .sec-tittles h3 {
     margin-left: 0;
-    color: #7a5565;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
+    color: #f5f5f5;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
     font-weight: 500;
     letter-spacing: 0.5px;
 }
@@ -141,9 +141,9 @@
     width: 350px;
     max-width: 90vw;
     height: 100vh;
-    background: linear-gradient(135deg, #fff5f7 0%, #fff0f3 50%, #ffe4eb 100%);
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
     z-index: 10000;
-    box-shadow: -10px 0 30px rgba(199, 75, 122, 0.25);
+    box-shadow: -10px 0 30px rgba(212, 175, 55, 0.25);
     padding: 1rem;
     box-sizing: border-box;
     overflow-y: auto;
@@ -167,13 +167,13 @@
 }
 
 .box-close .btn-close {
-    color: #c74b7a;
+    color: #d4af37;
     cursor: pointer;
     padding: 0.5rem;
 }
 
 .box-close .btn-close:hover {
-    color: #ff8fb3;
+    color: #f5f5f5;
     transition: all .3s ease;
 }
 
@@ -187,15 +187,15 @@
     display: flex;
     justify-content: space-between;
     font-family: 'Montserrat', sans-serif;
-    color: #3d2232;
+    color: #f5f5f5;
     padding: 0.5rem 0;
 }
 
 .box-total .total {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cinzel', serif;
     font-weight: 600;
     font-size: 1.2rem;
-    color: #c74b7a;
+    color: #d4af37;
 }
 
 .box-tittles,
@@ -300,8 +300,8 @@
         position: relative;
         z-index: 10;
         flex-shrink: 0;
-        background: linear-gradient(135deg, #fff5f7 0%, #fff0f3 100%);
-        border-bottom: 1px solid rgba(199, 75, 122, 0.15);
+        background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.3);
         padding: 0;
         margin: 0;
         height: auto;

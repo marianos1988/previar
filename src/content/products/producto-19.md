@@ -1,10 +1,9 @@
 ---
-        nombre: Caramels Butter Toffee
-        precio: 1600
-        images:
-                img1: 1.jpg
-                img2: 2.jpg
-        categoria: Caramelos
+        nombre: Vino Espumante Prosecco
+        precio: 2900
+        images: 
+                img1: champagne.jpg
+        categoria: Espumantes
 ---
 
-Caramelos de crema tostada. Suaves y mantecosos. Bolsa de 150g.
+Vino espumante italiano Prosecco, ligero y afrutado con notas a pera y manzana. Perfecto para brunch.

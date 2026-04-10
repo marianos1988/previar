@@ -1,10 +1,9 @@
 ---
-        nombre: Gomitas Sour
-        precio: 1500
-        images:
-                img1: 1.jpg
-                img2: 2.jpg
-        categoria: Gomitas
+        nombre: Moscow Mule
+        precio: 2800
+        images: 
+                img1: whisky.jpg
+        categoria: Cócteles
 ---
 
-Gomitas ácidas con cobertura de azúcar. Para los que les gusta el toque ácido. Presentación 80g.
+Cóctel Moscow Mule con vodka, ginger beer y lima. Servido en jarra de cobre tradicional.

@@ -1,10 +1,9 @@
 ---
-        nombre: Torta Helado
-        precio: 5500
-        images:
-                img1: 1.jpg
-                img2: 2.jpg
-        categoria: Helados
+        nombre: Vino Blanco Chardonnay
+        precio: 2600
+        images: 
+                img1: vino.jpg
+        categoria: Vinos
 ---
 
-Postre congelado de vainilla con cobertura de chocolate. Presentación individual de 150ml.
+Vino blanco Chardonnay con sabores a manzana verde, durazno y vainilla. Ideal para pescados y pastas blancas.

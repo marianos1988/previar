@@ -1,10 +1,9 @@
 ---
-        nombre: Chupetín Lollipop
-        precio: 1000
-        images:
-                img1: 1.jpg
-                img2: 2.jpg
-        categoria: Chupetines
+        nombre: Champagne Brut
+        precio: 3500
+        images: 
+                img1: champagne.jpg
+        categoria: Espumantes
 ---
 
-Chupetín gigante de frutas. Ideal para fiestas infantiles y cumpleaños. Varios sabores disponibles.
+Champagne Brut clásico con burbujas finas y aroma a frutas blancas. Celebra tus momentos especiales.

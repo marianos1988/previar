@@ -1,10 +1,9 @@
 ---
-        nombre: Turrón Doscor
-        precio: 2100
-        images:
-                img1: 1.jpg
-                img2: 2.jpg
-        categoria: Turrones
+        nombre: Whisky Irlandés
+        precio: 6800
+        images: 
+                img1: whisky.jpg
+        categoria: Whiskys
 ---
 
-Turrón de maní con chocolate. Barra de 80g. Snack crujiente y dulce para cualquier hora.
+Whisky irlandés triple destilado, suave y accesible. Notas a miel, frutas y madera dorada.

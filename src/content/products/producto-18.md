@@ -1,10 +1,9 @@
 ---
-        nombre: Chocolate Tita
-        precio: 1300
-        images:
-                img1: 1.jpg
-                img2: 2.jpg
-        categoria: Chocolates
+        nombre: Caipiriña
+        precio: 2400
+        images: 
+                img1: whisky.jpg
+        categoria: Cócteles
 ---
 
-Chocolate Tita con de oblea bañado con chocolate
+Caipiriña auténtica con cachaça, lima y azúcar. El cóctel brasileiro más famoso del mundo.

@@ -2,11 +2,11 @@
     width: 100%;
     max-width: 260px;
     border-radius: 18px;
-    border: 2px solid rgba(199, 75, 122, 0.15);
+    border: 2px solid rgba(212, 175, 55, 0.15);
     padding: 0;
-    background: #fff;
+    background: #1a1a1a;
     animation: aparecer .4s ease-in;
-    box-shadow: 0 6px 20px rgba(199, 75, 122, 0.1);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.1);
     box-sizing: border-box;
     overflow: hidden;
 }
@@ -24,7 +24,7 @@
     width: 100%;
     min-height: 180px;
     overflow: hidden;
-    background: linear-gradient(135deg, #fff5f7 0%, #fff0f3 100%);
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
     position: relative;
     display: flex;
     align-items: stretch;
@@ -38,25 +38,25 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #3d2232;
+    color: #f5f5f5;
     text-align: center;
     padding: 10px;
 }
 
 .desc-product h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cinzel', serif;
     font-size: 1rem;
     font-weight: 600;
     line-height: 1.3;
     margin: 0.4rem 0;
-    color: #3d2232;
+    color: #f5f5f5;
 }
 
 .desc-product h4 {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.95rem;
     font-weight: 600;
-    color: #c74b7a;
+    color: #d4af37;
     margin: 0.2rem 0 0.5rem 0;
 }
 
@@ -92,11 +92,11 @@
 
 .group-btns .box-tilde.active svg {
     transform: none;
-    color: #ff8fb3;
+    color: #d4af37;
 }
 
 .group-btns .box-tilde svg {
-    color: #c74b7a;
+    color: #d4af37;
     width: 24px;
     height: 24px;
     flex-shrink: 0;
@@ -142,7 +142,7 @@
 
     .group-btns .box-tilde.active svg {
         transform: none;
-        color: #ff8fb3;
+        color: #d4af37;
     }
 }
 
@@ -189,7 +189,7 @@
 
     .group-btns .box-tilde.active svg {
         transform: none;
-        color: #ff8fb3;
+        color: #d4af37;
     }
 }
 
@@ -232,6 +232,6 @@
 
     .group-btns .box-tilde.active svg {
         transform: none;
-        color: #ff8fb3;
+        color: #d4af37;
     }
 }

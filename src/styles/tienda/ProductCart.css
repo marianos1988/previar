@@ -4,9 +4,6 @@
   width: 100%;
   margin-bottom: 1rem;
   padding: 12px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 16px;
-  border: 1px solid rgba(199, 75, 122, 0.15);
   box-sizing: border-box;
 }
 
@@ -27,12 +24,12 @@
 
 .box-tittle h5,
 .box-price h5 {
-  color: #3d2232;
+  color: #f5f5f5;
   margin: 0;
 }
 
 .box-tittle h5 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cinzel', serif;
   font-size: 0.95rem;
   font-weight: 600;
   text-align: left;
@@ -42,7 +39,7 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #c74b7a;
+  color: #d4af37;
 }
 
 
@@ -50,9 +47,9 @@
   width: 80px;
   height: 80px;
   border-radius: 12px;
-  border: 2px solid rgba(199, 75, 122, 0.25);
+  border: 2px solid rgba(212, 175, 55, 0.25);
   object-fit: cover;
-  box-shadow: 0 3px 10px rgba(199, 75, 122, 0.2);
+  box-shadow: 0 3px 10px rgba(212, 175, 55, 0.2);
 }
 
 .plus-less {
@@ -62,14 +59,14 @@
 }
 
 .plus-less svg {
-  color: #c74b7a;
+  color: #d4af37;
   width: 28px;
   height: 28px;
   transition: all .3s ease;
 }
 
 .plus-less svg:hover {
-  color: #ff8fb3;
+  color: #f5f5f5;
   cursor: pointer;
   transform: scale(1.1);
 }
@@ -87,9 +84,10 @@
   text-align: center;
   width: 36px;
   height: 36px;
-  border: 1px solid rgba(199, 75, 122, 0.3);
+  border: 1px solid rgba(212, 175, 55, 0.3);
   border-radius: 8px;
-  color: #3d2232;
+  background: #1a1a1a;
+  color: #f5f5f5;
   font-weight: 600;
   font-size: 14px;
 }
@@ -102,7 +100,7 @@
 }
 
 .box-trash svg {
-  color: #c74b7a;
+  color: #d4af37;
   cursor: pointer;
   transition: all .3s ease;
   width: 24px;
@@ -110,7 +108,7 @@
 }
 
 .box-trash svg:hover {
-  color: #ff6b9d;
+  color: #e74c3c;
   transform: scale(1.1);
 }
 

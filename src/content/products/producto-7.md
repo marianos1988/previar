@@ -1,10 +1,9 @@
 ---
-        nombre: Chocolate Block
-        precio: 2800
-        images:
-                img1: 1.jpg
-                img2: 2.jpg
-        categoria: Chocolates
+        nombre: Whisky Bourbon
+        precio: 7200
+        images: 
+                img1: whisky.jpg
+        categoria: Whiskys
 ---
 
-Chocolate con leche y pedazos de galletitas. Tableta de 100g para disfrutar en cualquier momento.
+Whisky Bourbon americano con sabores a vainilla, caramelo y roble. Disfrútalo solo o con hielo.

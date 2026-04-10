@@ -1,14 +1,12 @@
 .container-card-info {
-  
   display: flex;
   width: 90%;
   border-radius: 10px;
-  border: 3px solid #0FF0FC;
+  border: 3px solid #d4af37;
   padding: 10px;
   margin-bottom: 30px;
   animation: aparecer .4s ease-in;
-  
-
+  background: #1a1a1a;
 }
 
 .container-card-info img {
@@ -28,96 +26,87 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: #f5f5f5;
 }
 
 .desc-product-info h3 {
-  font-family: "Neo-latina" ,sans-serif;
+  font-family: 'Cinzel', serif;
   position: absolute;
   line-height: 0px;
   font-size: larger;
-  top: 2%
+  top: 2%;
+  color: #f5f5f5;
 }
 
 .desc-product-info h4 {
-  font-family: "Badcomic", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   line-height: 0px;
   font-size: small;
-    position: absolute;
-    top: 15%;
-
+  position: absolute;
+  top: 15%;
+  color: #d4af37;
 }
 
 .desc-product-info .group-btns {
   display: flex;
   flex-wrap: nowrap;
-
   width: 100%;
   justify-content: center;
   transform: translateY(100px);
-
 }
 
 .desc-product-info .group-btns button {
- 
-  color: #fff;
+  color: #1a1a1a;
 }
 
-.group-btns .box-tilde.hidden{
+.group-btns .box-tilde.hidden {
   display: none;
-  /* transform: translate(170px, -40px); */
   width: 35px;
   height: 35px;
-  color: #0FF0FC;
+  color: #d4af37;
   animation: aparecer .4s ease-in;
 }
 
 .group-btns .box-tilde.active {
   display: inherit;
-
 }
 
 .box-tilde.active svg {
-   position: absolute;
-    width: 30px;
+  position: absolute;
+  width: 30px;
   height: 30px;
-  color: #0FF0FC;
+  color: #d4af37;
   animation: aparecer .4s ease-in;
-  transform: translate(52px,4px);
+  transform: translate(52px, 4px);
 }
 
 @media (min-width:300px) AND (max-width:350px) {
-
   .container-card {
     transform: scale(.8) translateX(-10%);
   }
 }
 
 @media (min-width:351px) AND (max-width:450px) {
-
   .container-card {
     transform: scale(.85) translateX(-10%);
   }
 }
 
 @media (min-width:451px) AND (max-width:510px) {
-
   .container-card {
     transform: scale(.9) translateX(-8%);
   }
 }
-@media (max-width: 790px) {
 
-  .container-card-info  {
+@media (max-width: 790px) {
+  .container-card-info {
     flex-direction: column;
   }
 }
 
-
 @keyframes aparecer {
-
   0% {
-    opacity: 0
+    opacity: 0;
   }
   100% {
     opacity: 1;

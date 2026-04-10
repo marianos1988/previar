@@ -1,8 +1,8 @@
 .btn-add-cart {
   font-family: 'Montserrat', sans-serif;
   position: relative;
-  background: linear-gradient(135deg, #c74b7a 0%, #ff8fb3 100%);
-  color: #fff;
+  background: linear-gradient(135deg, #d4af37 0%, #e5c76b 100%);
+  color: #1a1a1a;
   font-weight: 600;
   text-decoration: none;
   text-transform: uppercase;
@@ -12,7 +12,7 @@
   transition: all 0.3s ease;
   border-radius: 20px;
   padding: 0 12px;
-  box-shadow: 0 3px 10px rgba(199, 75, 122, 0.3);
+  box-shadow: 0 3px 10px rgba(212, 175, 55, 0.3);
   white-space: nowrap;
 }
 
@@ -22,9 +22,9 @@
 }
 
 .btn-add-cart:hover {
-  background: linear-gradient(135deg, #ff8fb3 0%, #c74b7a 100%);
-  color: #fff;
-  box-shadow: 0 5px 15px rgba(199, 75, 122, 0.4);
+  background: linear-gradient(135deg, #e5c76b 0%, #d4af37 100%);
+  color: #1a1a1a;
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
   transform: translateY(-2px);
   cursor: pointer;
 }
@@ -41,8 +41,8 @@
 .btn-add-cart {
   font-family: 'Montserrat', sans-serif;
   position: relative;
-  background: linear-gradient(135deg, #c74b7a 0%, #ff8fb3 100%);
-  color: #fff;
+  background: linear-gradient(135deg, #d4af37 0%, #e5c76b 100%);
+  color: #1a1a1a;
   font-weight: 600;
   text-decoration: none;
   text-transform: uppercase;
@@ -51,7 +51,7 @@
   transition: all 0.3s ease;
   border-radius: 20px;
   padding: 0 16px;
-  box-shadow: 0 4px 12px rgba(199, 75, 122, 0.35);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -84,7 +84,7 @@
 }
 
 .btn-add-cart:hover {
-  box-shadow: 0 6px 18px rgba(199, 75, 122, 0.5);
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.5);
   transform: translateY(-2px);
 }
 

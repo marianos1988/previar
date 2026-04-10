@@ -1,10 +1,9 @@
 ---
-        nombre: Alfajor Mil Oy
-        precio: 2200
-        images:
-                img1: 1.jpg
-                img2: 2.jpg
-        categoria: Alfajores
+        nombre: Whisky Escocés 12 Años
+        precio: 8500
+        images: 
+                img1: whisky.jpg
+        categoria: Whiskys
 ---
 
-Alfajor de chocolate con relleno de crema. Clásico argentino que no puede faltar en tu merienda.
+Whisky escocés de 12 años de maduración, con notas de humo, miel y madera. Elegante y sofisticado.

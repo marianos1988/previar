@@ -4,8 +4,8 @@
   width: auto;
   min-width: 180px;
   max-width: 220px;
-  background: linear-gradient(135deg, #c74b7a 0%, #ff8fb3 100%);
-  color: #fff;
+  background: linear-gradient(135deg, #d4af37 0%, #e5c76b 100%);
+  color: #1a1a1a;
   font-weight: 600;
   font-size: 0.85rem;
   text-transform: uppercase;
@@ -15,7 +15,7 @@
   border-radius: 25px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(199, 75, 122, 0.3);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -29,15 +29,15 @@
 }
 
 .btn-order:hover {
-  background: linear-gradient(135deg, #ff8fb3 0%, #c74b7a 100%);
-  box-shadow: 0 6px 20px rgba(199, 75, 122, 0.4);
+  background: linear-gradient(135deg, #e5c76b 0%, #d4af37 100%);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
   transform: translateY(-2px);
   cursor: pointer;
 }
 
 .btn-order:active {
   transform: translateY(0);
-  box-shadow: 0 3px 10px rgba(199, 75, 122, 0.3);
+  box-shadow: 0 3px 10px rgba(212, 175, 55, 0.3);
 }
 
 .btn-order span {

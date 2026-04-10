@@ -1,10 +1,9 @@
 ---
-        nombre: Bizcochito Glaseado
-        precio: 1100
-        images:
-                img1: 1.jpg
-                img2: 2.jpg
-        categoria: facturas
+        nombre: Mojito
+        precio: 2600
+        images: 
+                img1: whisky.jpg
+        categoria: Cócteles
 ---
 
-Bizcochito de grasa con glaseado rosa. Fresco del horno. Ideal para el mate o el café.
+Mojito clásico con ron, menta fresca, lima y soda. Cóctel refrescante perfecto para el verano.

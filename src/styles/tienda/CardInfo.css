@@ -3,14 +3,14 @@
   width: 90%;
   max-width: 900px;
   border-radius: 24px;
-  border: 2px solid rgba(199, 75, 122, 0.12);
+  border: 2px solid rgba(212, 175, 55, 0.12);
   padding: 24px;
   margin: 1rem auto;
-  background: linear-gradient(145deg, #ffffff 0%, #fff8fa 100%);
+  background: linear-gradient(145deg, #1a1a1a 0%, #0a0a0a 100%);
   animation: slideUp 0.4s ease-out;
   box-shadow: 
-    0 10px 40px rgba(199, 75, 122, 0.12),
-    0 2px 10px rgba(199, 75, 122, 0.08);
+    0 10px 40px rgba(212, 175, 55, 0.12),
+    0 2px 10px rgba(212, 175, 55, 0.08);
 }
 
 .box-image {
@@ -26,15 +26,15 @@
   justify-content: center;
   align-items: center;
   padding: 16px 24px;
-  color: #3d2232;
+  color: #f5f5f5;
   text-align: center;
 }
 
 .desc-product-info h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cinzel', serif;
   font-size: 1.75rem;
   font-weight: 700;
-  color: #3d2232;
+  color: #f5f5f5;
   margin: 0 0 8px 0;
   line-height: 1.2;
   letter-spacing: 0.5px;
@@ -44,7 +44,7 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
-  color: #c74b7a;
+  color: #d4af37;
   margin: 0 0 16px 0;
   letter-spacing: 1px;
 }
@@ -52,7 +52,7 @@
 .desc-product-info p {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.95rem;
-  color: #6b4d5a;
+  color: #a0a0a0;
   text-align: center;
   line-height: 1.7;
   margin: 0 0 24px 0;
@@ -92,11 +92,11 @@
 
 .group-btns .box-tilde.active svg {
   transform: none;
-  color: #ff8fb3;
+  color: #d4af37;
 }
 
 .group-btns .box-tilde svg {
-  color: #c74b7a;
+  color: #d4af37;
   width: 24px;
   height: 24px;
   flex-shrink: 0;
@@ -155,7 +155,7 @@
 
   .group-btns .box-tilde.active svg {
     transform: none;
-    color: #ff8fb3;
+    color: #d4af37;
   }
 
   .group-btns .box-tilde svg {
@@ -204,7 +204,7 @@
 
   .group-btns .box-tilde.active svg {
     transform: none;
-    color: #ff8fb3;
+    color: #d4af37;
   }
 
   .group-btns .box-tilde svg {
@@ -242,7 +242,7 @@
 
   .group-btns .box-tilde.active svg {
     transform: none;
-    color: #ff8fb3;
+    color: #d4af37;
   }
 
   .group-btns .box-tilde svg {

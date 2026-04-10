@@ -8,8 +8,8 @@
 .btn-cart {
   font-family: 'Montserrat', sans-serif;
   position: relative;
-  background: linear-gradient(135deg, #c74b7a 0%, #ff8fb3 100%);
-  color: #fff;
+  background: linear-gradient(135deg, #d4af37 0%, #e5c76b 100%);
+  color: #1a1a1a;
   font-weight: 600;
   text-decoration: none;
   text-transform: uppercase;
@@ -19,7 +19,7 @@
   font-size: 0.75rem;
   transition: all 0.3s ease;
   border-radius: 50%;
-  box-shadow: 0 4px 15px rgba(199, 75, 122, 0.3);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,9 +31,9 @@
 }
 
 .btn-cart:hover {
-  background: linear-gradient(135deg, #ff8fb3 0%, #c74b7a 100%);
-  color: #fff;
-  box-shadow: 0 6px 20px rgba(199, 75, 122, 0.45);
+  background: linear-gradient(135deg, #e5c76b 0%, #d4af37 100%);
+  color: #1a1a1a;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.45);
   cursor: pointer;
   transform: translateY(-4px) scale(1.05);
 }
@@ -57,9 +57,9 @@
   position: absolute;
   top: -6px;
   right: -6px;
-  background: linear-gradient(135deg, #c74b7a, #ff8fb3);
-  color: #fff;
-  border: 2px solid #fff;
+  background: linear-gradient(135deg, #d4af37, #e5c76b);
+  color: #1a1a1a;
+  border: 2px solid #1a1a1a;
   font-family: 'Montserrat', sans-serif;
   width: 18px;
   height: 18px;
@@ -69,7 +69,7 @@
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  box-shadow: 0 2px 8px rgba(199, 75, 122, 0.4);
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.4);
 }
 
 .box-btn-cart:hover .cart-badge {

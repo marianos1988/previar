@@ -1,10 +1,9 @@
 ---
-        nombre: Caramelos Frugele
-        precio: 900
-        images:
-                img1: 1.jpg
-                img2: 2.jpg
-        categoria: Caramelos
+        nombre: Pisco Sour
+        precio: 2500
+        images: 
+                img1: whisky.jpg
+        categoria: Cócteles
 ---
 
-Caramelos de crema Chantilly. Suaves y cremosos. Bolsa de 200g con variedad de sabores.
+Pisco Sour clásico peruano con pisco, limón, clara de huevo y amargura. Refrescante y sofisticado.

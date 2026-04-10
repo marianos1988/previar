@@ -1,10 +1,9 @@
 ---
-        nombre: Pirulín
-        precio: 500
-        images:
-                img1: 1.jpg
-                img2: 2.jpg
-        categoria: Chupetines
+        nombre: Cerveza Negra Stout
+        precio: 1000
+        images: 
+                img1: cerveza.jpg
+        categoria: Cervezas
 ---
 
-Pirulí clásico de vainilla. El caramelo tradicional que nunca pasa de moda. Sabor inconfundible.
+Cerveza negra tipo Stout, cremosa y con sabores a cacao y café. Para los que buscan intensidad.

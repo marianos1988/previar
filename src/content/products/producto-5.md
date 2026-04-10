@@ -1,10 +1,9 @@
 ---
-        nombre: Bombón Ferrero
-        precio: 3500
-        images:
-                img1: 1.jpg
-                img2: 2.jpg
-        categoria: Bombones
+        nombre: Cerveza Roja IPA
+        precio: 900
+        images: 
+                img1: cerveza.jpg
+        categoria: Cervezas
 ---
 
-Caja de bombones rellenos con avellanas y cacao. El regalo perfecto para ocasiones especiales.
+Cerveza roja estilo IPA con amargor equilibrado y aromas citrus. Perfecta para amantes de las cervezas artesanales.

@@ -1,10 +1,12 @@
 ---
-        nombre: Producto Destacado 1
-        precio: 1500
+        nombre: Vino Tinto Malbec
+        precio: 2500
         images: 
-                img1: 1.jpg
+                img1: vino.jpg
         
-        categoria: Destacados
+        categoria: Vinos
 ---
 
-Tu descripción del producto aquí. Personaliza este archivo.
+Vino tinto Malbec de alta calidad, notas a frutos rojos y especias. ideal para carnes rojas y comidas elaboradas.
+
+(End of file - total 10 lines)

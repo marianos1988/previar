@@ -1,10 +1,9 @@
 ---
-        nombre: Galletitas Opera
-        precio: 1900
-        images:
-                img1: 1.jpg
-                img2: 2.jpg
-        categoria: Galletitas
+        nombre: Espumante Rosado
+        precio: 3200
+        images: 
+                img1: champagne.jpg
+        categoria: Espumantes
 ---
 
-Galletitas de obleas con relleno de crema. Paquete de 120g. El snack más popular del mundo.
+Espumante rosado fresco y afrutado, con notas a frutillas y rosas. Ideal para aperitivos.

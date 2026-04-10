@@ -1,10 +1,9 @@
 ---
-        nombre: Chicles Grosso
-        precio: 1200
-        images:
-                img1: 1.jpg
-                img2: 2.jpg
-        categoria: Chicles
+        nombre: Cerveza Rubia Lager
+        precio: 800
+        images: 
+                img1: cerveza.jpg
+        categoria: Cervezas
 ---
 
-Chicles varios sabores. Paquete con 50 unidades. Para un aliento fresco todo el día.
+Cerveza rubia tipo Lager, fresca y ligera. Ideal para compartir en reuniones y ocasiones sociales.

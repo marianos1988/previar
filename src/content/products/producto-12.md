@@ -1,10 +1,9 @@
 ---
-        nombre: Chicle Bubbaloo
-        precio: 700
-        images:
-                img1: 1.jpg
-                img2: 2.jpg
-        categoria: Chicles
+        nombre: Gin Tonic
+        precio: 2200
+        images: 
+                img1: whisky.jpg
+        categoria: Cócteles
 ---
 
-Chicle masticable con líquido sabor frutas. Sin azúcar. Paquete con 5 unidades.
+Gin Tonic con ginebra premium y tónica artesanales. Decorado con rodaja de limón y romero.

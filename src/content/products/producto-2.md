@@ -1,10 +1,12 @@
 ---
-        nombre: Caramelos M&M's
-        precio: 2500
-        images:
-                img1: 1.jpg
-                img2: 2.jpg
-        categoria: Caramelos
+        nombre: Vino Blanco Sauvignon Blanc
+        precio: 2200
+        images: 
+                img1: vino.jpg
+        
+        categoria: Vinos
 ---
 
-Caramelos de chocolate con cobertura de colores. Ideales para compartir en cualquier momento del día.
+Vino blanco Sauvignon Blanc, fresco y aromático con notas cítricas. Perfecto para pescados y mariscos.
+
+(End file - total 10 lines)

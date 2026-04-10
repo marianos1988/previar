@@ -1,10 +1,9 @@
 ---
-        nombre: Alfajor Havanna
-        precio: 4500
-        images:
-                img1: 1.jpg
-                img2: 2.jpg
-        categoria: Alfajores
+        nombre: Cerveza de Trigo
+        precio: 950
+        images: 
+                img1: cerveza.jpg
+        categoria: Cervezas
 ---
 
-Alfajor Havanna. Dulzura y sabor. Caja con 6 unidades. El clásico de Mar del Plata.
+Cerveza de trigo rubia y turbia, con sabores a banana y clove. Estilo alemán Weizenbier.

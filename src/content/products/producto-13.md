@@ -1,10 +1,9 @@
 ---
-        nombre: Chocolate Amargo 70%
-        precio: 3200
-        images:
-                img1: 1.jpg
-                img2: 2.jpg
-        categoria: Chocolates
+        nombre: Vino Tinto Cabernet Sauvignon
+        precio: 3000
+        images: 
+                img1: vino.jpg
+        categoria: Vinos
 ---
 
-Chocolate amargo 70% cacao. Tableta de 90g. Para los amantes del chocolate puro.
+Vino tinto Cabernet Sauvignon con cuerpo robusto, notas a cassis y pimienta negra. Perfecto para carnes rojas.

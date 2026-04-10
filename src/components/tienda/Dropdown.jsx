@@ -43,7 +43,7 @@ export default function Dropdown({ label = "Seleccionar", moodInfo, options = []
                 className="dropdown-item"
                 onClick={() => handleSelect(option)}
               >
-                {option.label}
+                {option.label} 
               </li>
             ))}
           </ul>
