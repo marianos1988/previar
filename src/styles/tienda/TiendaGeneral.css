@@ -1,7 +1,7 @@
 .container-merch {
     z-index: 10;
-    width: 100vw;
-    max-width: 100vw;
+    width: 100%;
+    max-width: 100%;
     display: grid;
     grid-template-columns: 65px 1fr 0;
     grid-template-rows: auto auto 1fr;
@@ -10,6 +10,7 @@
     margin: 0;
     gap: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .container-merch.active {
@@ -319,18 +320,154 @@
     }
 
     .sec-products .box-dropdown {
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
+        display: flex;
+        flex-direction: column;
         gap: 0.5rem;
-        margin-bottom: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .sec-products .box-dropdown .search-wrapper {
+        width: 95%;
+        margin: 0 auto;
+        border-radius: 10px;
+        border: 1px solid #e0e0e0;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .sec-products .box-dropdown .search-wrapper:focus-within {
+        border-color: #d4af37 !important;
+        box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25) !important;
+    }
+
+    .sec-products .box-dropdown .search-input {
+        width: 100%;
+    }
+
+    .sec-products .box-dropdown .row-controls {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        gap: 0.5rem;
+        margin-right: 0.5rem;
+    }
+
+    .sec-products .box-dropdown > button,
+    .sec-products .box-dropdown > div {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        border: 1px solid #e0e0e0;
+        background: #fff;
+        transition: none;
+    }
+
+    .sec-products .box-dropdown > button,
+    .sec-products .box-dropdown > div {
+        transition: none;
+    }
+
+    .sec-info-product .box-dropdown {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+        padding: 0.75rem;
+        margin-top: 0.4rem;
+        margin-bottom: 0.4rem;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 2px 12px rgba(61, 34, 50, 0.08);
+    }
+
+    .sec-info-product .box-dropdown > * {
+        height: 44px;
+        width: 100%;
+    }
+
+    .sec-info-product .info-product {
+        padding: 0.25rem;
+    }
+
+    }
+
+@media (max-width: 480px) {
+    .sec-products .box-dropdown {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+        padding: 0.75rem;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 2px 12px rgba(61, 34, 50, 0.08);
     }
 
     .sec-products .box-dropdown > * {
-        height: 38px;
+        height: 44px;
     }
 
-    .sec-products .list-products {
+    .sec-products .box-dropdown .search-wrapper {
+        width: 95%;
+        margin: 0 auto;
+        border-radius: 10px;
+        border: 1px solid #e0e0e0;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .sec-products .box-dropdown .search-wrapper:focus-within {
+        border-color: #d4af37 !important;
+        box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25) !important;
+    }
+
+    .sec-products .box-dropdown .search-input {
+        width: 100%;
+    }
+
+    .sec-products .box-dropdown .row-controls {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        gap: 0.5rem;
+        margin-right: 0.5rem;
+    }
+
+    .sec-products .box-dropdown > button,
+    .sec-products .box-dropdown > div {
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        border: 1px solid #e0e0e0;
+        background: #fff;
+    }
+
+    .sec-products .box-dropdown > button:hover,
+    .sec-products .box-dropdown > div:hover {
+        border-color: #d4af37;
+    }
+
+    .sec-info-product .box-dropdown {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+        padding: 0.75rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 2px 12px rgba(61, 34, 50, 0.08);
+    }
+
+    .sec-info-product .box-dropdown > * {
+        height: 44px;
+        width: 100%;
+    }
+
+    .sec-info-product {
+        padding: 0.5rem 0.25rem;
+    }
+
+    }
+
+@media (max-width: 360px) {
         display: flex;
         flex-direction: column;
         align-items: center;

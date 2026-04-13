@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { Card } from "./Card";
 import { CardInfo } from "./CardInfo";
 import BtnCart from "./BtnCart";
+import BtnSearch from "./BtnSearch";
 import ProductCart from "./ProductCart";
 import BtnOrder from "./BtnOrder";
 
@@ -40,6 +41,7 @@ const [ nameCategory, setNameCategory ] = useState(stateNameCategory);
 const [viewCart, setViewCart] = useState(stateViewCart)
 const [ productsLimit, setProductsLimit ] = useState(10);
 const [ limitLabel, setLimitLabel ] = useState("Mostrar: 10");
+const [ searchTerm, setSearchTerm ] = useState("");
 
 
 const initialStateChangeScreenProducts = {
@@ -190,6 +192,27 @@ const [numBadge, setNumBadge] = useState(0);
     setProductsLimit(option.value);
     setLimitLabel(`Mostrar: ${option.value}`);
   };
+
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+    
+    if (term.trim() === "") {
+      setViewProducts(stateProducts);
+      setNameCategory("Productos");
+    } else {
+      const filtered = stateProducts.filter(product =>
+        product.name.toLowerCase().includes(term.toLowerCase())
+      );
+      setViewProducts(filtered);
+      setNameCategory(`Resultados: "${term}"`);
+    }
+  }
+
+  const clearSearch = () => {
+    setSearchTerm("");
+    setViewProducts(stateProducts);
+    setNameCategory("Productos");
+  }
 
   const selectOrder = (option) => {
     
@@ -347,17 +370,24 @@ const [numBadge, setNumBadge] = useState(0);
                     
                     <section className="sec-products">
                         <div className="box-dropdown">
-                            <Dropdown
-                                label="Ordenar por:" options={options} onSelect={ selectOrder }
-                                moodInfo={false}                            />
-                            <Dropdown
-                                label={limitLabel} options={limitOptions} onSelect={ selectLimit }
-                                moodInfo={false}
+                            <BtnSearch 
+                                searchTerm={searchTerm}
+                                onSearch={handleSearch}
+                                onClear={clearSearch}
                             />
-                            <BtnCart 
-                                ordersList = {numBadge}
-                                handleViewCart = {() => handleViewCart()}
-                            />
+                            <div className="row-controls">
+                                <Dropdown
+                                    label="Ordenar por:" options={options} onSelect={ selectOrder }
+                                    moodInfo={false}                            />
+                                <Dropdown
+                                    label={limitLabel} options={limitOptions} onSelect={ selectLimit }
+                                    moodInfo={false}
+                                />
+                                <BtnCart 
+                                    ordersList = {numBadge}
+                                    handleViewCart = {() => handleViewCart()}
+                                />
+                            </div>
                         </div>
                         <div className="list-products" key={viewProducts.map(p => p.id).join("-")}>
 
@@ -390,14 +420,21 @@ const [numBadge, setNumBadge] = useState(0);
                     <section className="sec-info-product">
 
                         <div className="box-dropdown">
-                            <Dropdown 
-                                label="Ordenar por:" options={options} onSelect={ selectOrder }
-                                moodInfo={true}
+                            <BtnSearch 
+                                searchTerm={searchTerm}
+                                onSearch={handleSearch}
+                                onClear={clearSearch}
                             />
-                            <BtnCart 
-                                ordersList = {numBadge}
-                                handleViewCart = {() => handleViewCart()}
-                            />
+                            <div className="row-controls">
+                                <Dropdown 
+                                    label="Ordenar por:" options={options} onSelect={ selectOrder }
+                                    moodInfo={true}
+                                />
+                                <BtnCart 
+                                    ordersList = {numBadge}
+                                    handleViewCart = {() => handleViewCart()}
+                                />
+                            </div>
                         </div>
                         <div className="info-product">
 
