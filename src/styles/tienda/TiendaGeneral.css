@@ -356,9 +356,8 @@
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        border-radius: 8px;
-        border: 1px solid #e0e0e0;
-        background: #fff;
+        border: none;
+        background: transparent;
         transition: none;
     }
 
@@ -428,15 +427,15 @@
         width: 100%;
         gap: 0.5rem;
         margin-right: 0.5rem;
+        background: transparent;
     }
 
     .sec-products .box-dropdown > button,
     .sec-products .box-dropdown > div {
         justify-content: center;
         align-items: center;
-        border-radius: 8px;
-        border: 1px solid #e0e0e0;
-        background: #fff;
+        border: none;
+        background: transparent;
     }
 
     .sec-products .box-dropdown > button:hover,
