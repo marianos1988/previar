@@ -348,7 +348,10 @@
         justify-content: flex-end;
         width: 100%;
         gap: 0.5rem;
-        margin-right: 0.5rem;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        padding: 0;
     }
 
     .sec-products .box-dropdown > button,
@@ -426,8 +429,10 @@
         justify-content: flex-end;
         width: 100%;
         gap: 0.5rem;
-        margin-right: 0.5rem;
         background: transparent;
+        border: none;
+        border-radius: 0;
+        padding: 0;
     }
 
     .sec-products .box-dropdown > button,
