@@ -1,5 +1,6 @@
 ---
 import { clientConfig } from "../config/clientConfig";
+import msywebLogo from "../assets/footer/msyweb.png";
 
 const logo = clientConfig.brand.logo;
 const CLIENT_LOGO = logo?.src || logo;
@@ -72,6 +73,10 @@ const year = new Date().getFullYear();
 
   <div class="footer-bottom">
     <p>© {year} <strong>{CLIENT_COMPANY_NAME}</strong> · Todos los derechos reservados</p>
+    <a href="https://www.instagram.com/msy.web?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="msyweb-link">
+      <span>Tienda creada por MSY WEB</span>
+      <img src={msywebLogo.src} alt="MSY WEB" class="msyweb-logo" />
+    </a>
   </div>
 </footer>
 
@@ -302,6 +307,10 @@ const year = new Date().getFullYear();
     width: 100%;
     box-sizing: border-box;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   .footer-bottom p {
@@ -313,6 +322,27 @@ const year = new Date().getFullYear();
 
   .footer-bottom strong {
     color: #000000;
+  }
+
+  .msyweb-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    text-decoration: none;
+    color: #000000;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+  }
+
+  .msyweb-link:hover {
+    color: #fffdd0;
+  }
+
+  .msyweb-logo {
+    height: 28px;
+    width: auto;
+    object-fit: contain;
   }
 
   @media (max-width: 900px) {
