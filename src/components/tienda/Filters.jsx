@@ -1,4 +1,3 @@
-
 import { useState, useRef } from "react";
 import "../../styles/tienda/Filters.css"
 
@@ -68,7 +67,7 @@ export default function Filters({ categories, handleOpenGrid, openGrid, handleSe
         }
     };
 
-    return(
+    return(    
         <>  
             <div className={`container-filters ${numberCategories}-categories ${openGrid ? 'open' : ''}`}>
                 <nav className="sidebar">

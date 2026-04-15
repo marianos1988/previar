@@ -77,6 +77,23 @@
   transform: scale(1.1);
 }
 
+@media (max-width: 907px) {
+  .box-btn-cart {
+    margin-right: 0.3rem;
+  }
+
+  .btn-cart {
+    height: 36px;
+    width: 36px;
+  }
+
+  .cart-badge {
+    width: 16px;
+    height: 16px;
+    font-size: 9px;
+  }
+}
+
 @media (max-width: 768px) {
   .box-btn-cart {
     margin-right: 0.3rem;

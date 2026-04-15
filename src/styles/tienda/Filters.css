@@ -77,6 +77,7 @@ button {
 
 .container-filters.open .sidebar{
     width: 220px;
+    margin-right: 8px;
 }
 
 .sidebar-inner{
@@ -351,24 +352,6 @@ button .icon-tabler-coin {
     .container-filters.one-categories {
         height: auto !important;
         min-height: auto !important;
-    }
-}
-
-@media (min-width: 749px) and (max-width: 840px) {
-    .container-filters {
-        width: 65px;
-    }
-
-    .container-filters.open {
-        width: 190px;
-    }
-
-    .container-filters.open .sidebar {
-        width: 190px;
-    }
-
-    .sidebar-inner {
-        width: 240px;
     }
 }
 

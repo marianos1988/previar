@@ -239,6 +239,135 @@
     }
 }
 
+@media (min-width: 769px) and (max-width: 820px) {
+    .container-merch {
+        grid-template-columns: 55px 1fr;
+    }
+    
+    .container-merch.active {
+        grid-template-columns: 160px 1fr;
+    }
+    
+    .sec-filters {
+        width: 55px;
+    }
+    
+    .container-merch.active .sec-filters {
+        width: 160px;
+    }
+
+    .sec-products {
+        padding: 0.5rem;
+        padding-left: 1rem;
+    }
+    
+    .sec-products .list-products {
+        gap: 0.75rem;
+    }
+    
+    .sec-products .box-dropdown {
+        gap: 0.25rem;
+        padding: 0.25rem;
+    }
+    
+    .sec-products .box-dropdown > * {
+        height: 36px;
+    }
+    
+    .search-wrapper {
+        height: 36px;
+        padding: 0 8px;
+    }
+    
+    .search-input {
+        min-width: 50px;
+        font-size: 11px;
+    }
+    
+    .search-label svg {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .container-card {
+        width: 160px;
+    }
+    
+    .img-product {
+        height: 120px;
+    }
+    
+    .desc-product {
+        padding: 0.5rem;
+    }
+    
+    .desc-product h3 {
+        font-size: 0.7rem;
+    }
+    
+    .desc-product h4 {
+        font-size: 0.65rem;
+    }
+}
+
+@media (min-width: 821px) and (max-width: 907px) {
+    .container-merch {
+        grid-template-columns: 55px 1fr;
+    }
+    
+    .container-merch.active {
+        grid-template-columns: 160px 1fr;
+    }
+    
+    .sec-filters {
+        width: 55px;
+    }
+    
+    .container-merch.active .sec-filters {
+        width: 160px;
+    }
+
+    .sec-products {
+        padding-left: 0.5rem;
+    }
+    
+    .sec-products .box-dropdown {
+        gap: 0.25rem;
+        padding: 0.25rem;
+    }
+    
+    .sec-products .box-dropdown > * {
+        height: 36px;
+    }
+    
+    .search-wrapper {
+        height: 36px;
+        padding: 0 8px;
+    }
+    
+    .search-input {
+        min-width: 60px;
+        font-size: 12px;
+    }
+    
+    .search-label svg {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .container-card {
+        width: 180px;
+    }
+    
+    .desc-product h3 {
+        font-size: 0.75rem;
+    }
+    
+    .desc-product h4 {
+        font-size: 0.7rem;
+    }
+}
+
 @media (min-width: 749px) and (max-width: 840px) {
     .container-merch {
         grid-template-columns: 65px 1fr;

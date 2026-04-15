@@ -2,7 +2,7 @@ import "../../styles/tienda/TiendaGeneral.css";
 import Dropdown from "./Dropdown";
 import Filters from "./Filters";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Card } from "./Card";
 import { CardInfo } from "./CardInfo";
 import BtnCart from "./BtnCart";
@@ -342,11 +342,7 @@ const [numBadge, setNumBadge] = useState(0);
 
 
 
-  useEffect(() => {
-
-  },[])
-
-    return(
+  return (
         <div className={(openGrid) ? `container-merch active` : `container-merch`}>
             <section className="sec-tittles">
 

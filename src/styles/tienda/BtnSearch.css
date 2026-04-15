@@ -55,6 +55,19 @@
     background: rgba(212, 175, 55, 0.2);
 }
 
+@media (max-width: 907px) {
+    .search-wrapper {
+        height: 38px;
+        padding: 0 8px;
+        margin-right: 1%;
+    }
+
+    .search-input {
+        min-width: 50px;
+        font-size: 12px;
+    }
+}
+
 @media (max-width: 768px) {
     .search-wrapper {
         height: 40px;
