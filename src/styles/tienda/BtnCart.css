@@ -116,6 +116,7 @@
 @media (max-width: 480px) {
   .box-btn-cart {
     margin-right: 0.25rem;
+    margin-left: 4px;
   }
 
   .btn-cart {

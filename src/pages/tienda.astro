@@ -10,10 +10,21 @@ const productsCollection = await getCollection('products');
 
 const products = productsCollection.map((product) => ({
     id: product.slug,
-    name: product.data.nombre,
-    price: product.data.precio,
-    description: product.body,
+    name: `${product.data.estuche} ${product.data.marca} ${product.data.variante} de ${product.data.tamano}Ml`,
+    price: product.data.precioMinorista,
+    description: `${product.data.estuche} ${product.data.marca} ${product.data.variante} de ${product.data.tamano}Ml`,
     category: product.data.categoria,
+    marca: product.data.marca,
+    estuche: product.data.estuche,
+    variante: product.data.variante,
+    tamano: product.data.tamano,
+    proveedor: product.data.proveedor,
+    precioCosto: product.data.precioCosto,
+    precioMayorista: product.data.precioMayorista,
+    precioMinorista: product.data.precioMinorista,
+    fechaPrecio: product.data.fechaPrecio,
+    descuento: product.data.descuento,
+    stock: product.data.stock,
     images: product.data.images
 }));
 

@@ -370,6 +370,7 @@ button .icon-tabler-coin {
         background: transparent;
         overflow: visible;
         transition: none;
+        box-sizing: border-box;
     }
 
     .sidebar-header {
@@ -511,6 +512,7 @@ button .icon-tabler-coin {
         grid-template-columns: repeat(2, 1fr);
         gap: 6px;
         padding: 0.5rem;
+        z-index: 0;
     }
 
     .sidebar-menu > button {

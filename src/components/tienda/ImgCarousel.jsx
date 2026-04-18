@@ -80,6 +80,7 @@ export default function ImgCarousel({ path, autoplay = true, delay = 3000 }) {
       className="carousel"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
+      onClick={next}
     >
       <div 
         className="carousel-img-wrapper"
@@ -99,12 +100,13 @@ export default function ImgCarousel({ path, autoplay = true, delay = 3000 }) {
           <span
             key={index}
             className={`dot ${index === current ? "active" : ""}`}
-            onClick={() => setCurrent(index)}
+            onClick={(e) => {
+              e.stopPropagation();
+              setCurrent(index);
+            }}
           />
         ))}
       </div>
     </div>
   );
 }
-
- 

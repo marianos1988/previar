@@ -396,9 +396,9 @@ const [numBadge, setNumBadge] = useState(0);
                                             name={product.name}
                                             price={product.price}
                                             description={product.description}
-                                            isThereStock={true} 
+                                            isThereStock={product.stock} 
                                             upToCart2={ handleSetOrderList }
-                                            tilde={product.config.addTilde}
+                                            tilde={product.config?.addTilde}
                                             screenOption={handleChangeScreenProducts}
                                         />
                                     )
@@ -444,9 +444,9 @@ const [numBadge, setNumBadge] = useState(0);
                                             name={product.name}
                                             price={product.price}
                                             description={product.description}
-                                            isThereStock={true} 
+                                            isThereStock={product.stock} 
                                             upToCart2={ handleSetOrderList }
-                                            tilde={product.config.addTilde}
+                                            tilde={product.config?.addTilde}
                                             screenOption={handleChangeScreenProducts}
 
                                         />  

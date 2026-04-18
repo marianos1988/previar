@@ -452,6 +452,12 @@
         border-bottom: 1px solid rgba(212, 175, 55, 0.3);
         padding: 0;
         margin: 0;
+    }
+
+    .sec-products .box-dropdown .row-controls .dropdown,
+    .sec-products .box-dropdown .row-controls .box-btn-cart {
+        margin-left: 0;
+    }
         height: auto;
     }
 
@@ -494,11 +500,11 @@
         display: flex;
         justify-content: flex-end;
         width: 100%;
-        gap: 0.5rem;
         background: transparent;
         border: none;
         border-radius: 0;
-        padding: 0;
+        padding: 0 8px;
+        box-sizing: border-box;
     }
 
     .sec-products .box-dropdown > button,
@@ -560,7 +566,7 @@
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
-        overflow: visible;
+        overflow: visible !important;
     }
     
     .container-card {
@@ -588,8 +594,9 @@
         gap: 8px;
         width: 100%;
         padding: 8px;
-        z-index: 100;
+        z-index: 9998;
         position: relative;
+        overflow: visible !important;
     }
 
     .sec-products .box-dropdown .search-wrapper {
@@ -606,6 +613,8 @@
         width: 100%;
         z-index: 1000;
         position: relative;
+        padding: 0 4px;
+        box-sizing: border-box;
     }
 
     .sec-products .box-dropdown .row-controls > * {

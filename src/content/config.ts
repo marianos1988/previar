@@ -6,8 +6,18 @@ import { defineCollection, z } from "astro:content"; // La zeta valida Esquemas
 
 const products = defineCollection({
     schema: z.object({
-        nombre: z.string(),
-        precio: z.number(),
+        marca: z.string(),
+        categoria: z.string(),
+        estuche: z.string(),
+        variante: z.string(),
+        tamano: z.string(),
+        proveedor: z.string(),
+        precioCosto: z.number(),
+        precioMayorista: z.number(),
+        precioMinorista: z.number(),
+        fechaPrecio: z.string(),
+        descuento: z.number().optional(),
+        stock: z.boolean(),
         images: z.object({
             img1: z.string().optional(),
             img2: z.string().optional(),
@@ -20,10 +30,6 @@ const products = defineCollection({
             img9: z.string().optional(),
             img10: z.string().optional(),
         }).optional(),
-        categoria: z.string(),
-        marca: z.string().optional(),
-        ml: z.string().optional(),
-        stock: z.string().optional(),
     })
 })
 

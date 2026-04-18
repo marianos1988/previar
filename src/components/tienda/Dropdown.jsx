@@ -24,13 +24,13 @@ export default function Dropdown({ label = "Seleccionar", moodInfo, options = []
   }, []);
 
   return (
-<>
+    <>
     { 
 
-    (moodInfo === false) /* El modo info es si esta seccio info producto o modo lsita de productos */
+    (moodInfo === false)
     
     ? (
-        <div className="dropdown" ref={dropdownRef}>
+        <div className={`dropdown ${open ? "open" : ""}`} ref={dropdownRef}>
           <button className="dropdown-button" onClick={() => setOpen(!open)}>
             {selected ? selected.label : label}
             <span className={`arrow ${open ? "open" : ""}`}>▼</span>
@@ -51,7 +51,7 @@ export default function Dropdown({ label = "Seleccionar", moodInfo, options = []
       )
     
     : (
-        <div className="dropdown" ref={dropdownRef}>
+        <div className={`dropdown ${open ? "open" : ""}`} ref={dropdownRef}>
           <button className="dropdown-button disabled" onClick={() => setOpen(!open)} disabled>
             {selected ? selected.label : label}
             <span className={`arrow ${open ? "open" : ""}`}>▼</span>
@@ -72,8 +72,6 @@ export default function Dropdown({ label = "Seleccionar", moodInfo, options = []
     )
 
     }
-</>
-
-
+  </>
   );
 }

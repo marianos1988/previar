@@ -108,6 +108,10 @@
     margin-bottom: 4px;
     overflow: visible;
     z-index: 1000;
+    margin-left: 4px;
+    margin-right: 4px;
+    position: relative;
+    transition: margin-bottom 0.3s ease;
   }
 
   .dropdown-button {
@@ -116,6 +120,10 @@
     font-size: 10px;
     padding: 0 10px;
     border-radius: 18px;
+  }
+
+  .dropdown-menu.open {
+    margin-bottom: 140px;
   }
 
   .dropdown-menu {
@@ -146,6 +154,7 @@
     white-space: nowrap;
     text-align: center;
     border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    color: #f5f5f5;
   }
 
   .dropdown-item:last-child {
@@ -158,6 +167,11 @@
 
   .dropdown-item:last-child {
     border-radius: 0 0 10px 10px;
+  }
+
+  .dropdown-item:hover {
+    background: rgba(212, 175, 55, 0.15);
+    color: #d4af37;
   }
 
   .arrow {

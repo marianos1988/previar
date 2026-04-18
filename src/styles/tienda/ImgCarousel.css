@@ -122,7 +122,7 @@
     max-width: 100%;
     overflow: hidden;
     box-sizing: border-box;
-    z-index: 0;
+    z-index: -1;
     position: relative;
   }
 
@@ -133,7 +133,7 @@
     border-radius: 12px;
     overflow: hidden;
     box-sizing: border-box;
-    z-index: 0;
+    z-index: -1;
   }
 
   .carousel-dots {
