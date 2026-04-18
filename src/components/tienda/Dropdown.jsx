@@ -12,7 +12,6 @@ export default function Dropdown({ label = "Seleccionar", moodInfo, options = []
     if (onSelect) onSelect(option); 
   };
 
-  // Cerrar si se hace clic fuera
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
@@ -30,7 +29,7 @@ export default function Dropdown({ label = "Seleccionar", moodInfo, options = []
     (moodInfo === false)
     
     ? (
-        <div className={`dropdown ${open ? "open" : ""}`} ref={dropdownRef}>
+        <div className="dropdown" ref={dropdownRef}>
           <button className="dropdown-button" onClick={() => setOpen(!open)}>
             {selected ? selected.label : label}
             <span className={`arrow ${open ? "open" : ""}`}>▼</span>
@@ -51,7 +50,7 @@ export default function Dropdown({ label = "Seleccionar", moodInfo, options = []
       )
     
     : (
-        <div className={`dropdown ${open ? "open" : ""}`} ref={dropdownRef}>
+        <div className="dropdown" ref={dropdownRef}>
           <button className="dropdown-button disabled" onClick={() => setOpen(!open)} disabled>
             {selected ? selected.label : label}
             <span className={`arrow ${open ? "open" : ""}`}>▼</span>

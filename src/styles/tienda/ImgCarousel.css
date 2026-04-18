@@ -122,8 +122,6 @@
     max-width: 100%;
     overflow: hidden;
     box-sizing: border-box;
-    z-index: -1;
-    position: relative;
   }
 
   .carousel-img-wrapper {
@@ -133,7 +131,6 @@
     border-radius: 12px;
     overflow: hidden;
     box-sizing: border-box;
-    z-index: -1;
   }
 
   .carousel-dots {
