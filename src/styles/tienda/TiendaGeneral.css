@@ -483,17 +483,20 @@
         border-radius: 16px;
         box-shadow: 0 2px 12px rgba(212, 175, 55, 0.15);
         box-sizing: border-box;
-        max-width: 100%;
+        max-width: 90%;
+        width: 90%;
+        margin: 0 auto;
         overflow: visible;
         z-index: 9998;
     }
 
     .sec-products .box-dropdown .search-wrapper {
-        width: 100%;
+        width: 95%;
         border-radius: 10px;
         border: 1px solid #333;
         transition: border-color 0.3s ease, box-shadow 0.3s ease;
         box-sizing: border-box;
+        padding: 0 0.5rem;
     }
 
     .sec-products .box-dropdown .search-wrapper:focus-within {
@@ -504,6 +507,8 @@
     .sec-products .box-dropdown .search-input {
         width: 100%;
         box-sizing: border-box;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
     }
 
     .sec-products .box-dropdown > button,
@@ -608,7 +613,7 @@
     }
     
     .container-card img {
-        height: 150px;
+        height: 120px;
     }
     
     .desc-product h3 {
@@ -629,7 +634,9 @@
         border-radius: 16px;
         box-shadow: 0 2px 12px rgba(212, 175, 55, 0.15);
         box-sizing: border-box;
-        max-width: 100%;
+        max-width: 90%;
+        width: 90%;
+        margin: 0 auto;
         overflow: visible !important;
     }
 
@@ -639,7 +646,8 @@
         border: 1px solid #333;
         transition: border-color 0.3s ease, box-shadow 0.3s ease;
         box-sizing: border-box;
-        width: 100%;
+        width: 95%;
+        padding: 0 0.5rem;
     }
 
     .sec-products .box-dropdown .search-wrapper:focus-within {
@@ -650,6 +658,8 @@
     .sec-products .box-dropdown .search-input {
         width: 100%;
         background: transparent;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
     }
 
     .sec-products .box-dropdown > button,
