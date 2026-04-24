@@ -28,7 +28,13 @@ const totalSlides = images.length;
     <div class="carousel" id="carousel">
       {images.map((src, index) => (
         <div class="slide">
-          <img src={src} alt={`Página ${index + 1}`} />
+          <img 
+            src={src} 
+            alt={`Página ${index + 1}`}
+            loading={index === 0 ? 'eager' : 'lazy'}
+            decoding="async"
+            fetchpriority={index === 0 ? 'high' : 'auto'}
+          />
         </div>
       ))}
     </div>
