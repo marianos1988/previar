@@ -39,6 +39,18 @@
     color: #aaa;
 }
 
+.search-wrapper.active {
+    background: #fff;
+}
+
+.search-wrapper.active .search-input {
+    color: #000;
+}
+
+.search-wrapper.active .search-input::placeholder {
+    color: #666;
+}
+
 .search-clear {
     background: rgba(212, 175, 55, 0.1);
     border: none;

@@ -1,0 +1,315 @@
+---
+const images = [
+  '/bodegas-naiara/1.jpg',
+  '/bodegas-naiara/2.jpg',
+  '/bodegas-naiara/3.jpg',
+  '/bodegas-naiara/4.jpg',
+  '/bodegas-naiara/5.jpg',
+  '/bodegas-naiara/6.jpg',
+  '/bodegas-naiara/7.jpg',
+  '/bodegas-naiara/8.jpg',
+];
+
+const totalSlides = images.length;
+---
+
+<section class="bodegas-naiara">
+  <div class="bodegas-bg"></div>
+  <div class="bodegas-accent-top"></div>
+  <div class="bodegas-accent-bottom"></div>
+  
+  <div class="title-container">
+    <div class="line"></div>
+    <h2><span class="normal">Representante oficial de</span> <span class="highlight">La Bodega Naiara Wines</span></h2>
+    <div class="line"></div>
+  </div>
+  
+  <div class="carousel-wrapper" id="carouselWrapper">
+    <div class="carousel" id="carousel">
+      {images.map((src, index) => (
+        <div class="slide">
+          <img src={src} alt={`Página ${index + 1}`} />
+        </div>
+      ))}
+    </div>
+  </div>
+  
+  <div class="dots-container">
+    {images.map((_, index) => (
+      <button class="bodega-dot" data-index={index} aria-label={`Ir a imagen ${index + 1}`}></button>
+    ))}
+  </div>
+</section>
+
+<script define:vars={{ totalSlides }}>
+  document.addEventListener('DOMContentLoaded', initCarousel);
+  
+  function initCarousel() {
+    let currentSlide = 0;
+    let startX = 0;
+    let endX = 0;
+    let isDragging = false;
+    
+    const wrapper = document.getElementById('carouselWrapper');
+    const carousel = document.getElementById('carousel');
+    const dots = document.querySelectorAll('.bodega-dot');
+    
+    function updateDots() {
+      dots.forEach(function(dot, i) {
+        if (i === currentSlide) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+    
+    function updateCarousel() {
+      const offset = -currentSlide * 100;
+      carousel.style.transform = 'translateX(' + offset + '%)';
+      updateDots();
+    }
+    
+    window.goToSlide = function(index) {
+      if (index < 0) index = totalSlides - 1;
+      if (index >= totalSlides) index = 0;
+      currentSlide = index;
+      updateCarousel();
+      wrapper.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    };
+    
+    wrapper.addEventListener('mousedown', function(e) {
+      isDragging = true;
+      startX = e.clientX;
+      e.preventDefault();
+    });
+    
+    wrapper.addEventListener('mousemove', function(e) {
+      if (!isDragging) return;
+      endX = e.clientX;
+    });
+    
+    wrapper.addEventListener('mouseup', function(e) {
+      if (!isDragging) return;
+      isDragging = false;
+      endX = e.clientX;
+      checkSwipe();
+    });
+    
+    wrapper.addEventListener('mouseleave', function() {
+      isDragging = false;
+    });
+    
+    wrapper.addEventListener('touchstart', function(e) {
+      isDragging = true;
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+    
+    wrapper.addEventListener('touchmove', function(e) {
+      if (!isDragging) return;
+      endX = e.touches[0].clientX;
+    }, { passive: true });
+    
+    wrapper.addEventListener('touchend', function(e) {
+      if (!isDragging) return;
+      isDragging = false;
+      endX = e.changedTouches[0].clientX;
+      checkSwipe();
+    });
+    
+    function checkSwipe() {
+      const diff = startX - endX;
+      if (Math.abs(diff) > 30) {
+        if (diff > 0) {
+          currentSlide++;
+          if (currentSlide >= totalSlides) currentSlide = 0;
+        } else {
+          currentSlide--;
+          if (currentSlide < 0) currentSlide = totalSlides - 1;
+        }
+      }
+      updateCarousel();
+      startX = 0;
+      endX = 0;
+    }
+    
+    dots.forEach(function(dot, index) {
+      dot.addEventListener('click', function() {
+        goToSlide(index);
+      });
+    });
+    
+    updateCarousel();
+  }
+</script>
+
+<style>
+  .bodegas-naiara {
+    position: relative;
+    width: 100%;
+    margin: 3rem 0;
+    overflow: hidden;
+  }
+  
+  .bodegas-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, #0d0d0d 0%, #1a1a1a 50%, #151515 100%);
+    z-index: -1;
+  }
+  
+  .bodegas-accent-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+    z-index: -1;
+  }
+  
+  .bodegas-accent-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+    z-index: -1;
+  }
+  
+  .title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    padding: 1rem 2rem;
+    background: linear-gradient(180deg, #0d0d0d 0%, #1a1a1a 50%, #151515 100%);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+  }
+  
+  .title-container .line {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent);
+    flex: 1;
+    max-width: 150px;
+    min-width: 50px;
+  }
+  
+  .title-container h2 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.1rem, 3vw, 1.8rem);
+    text-align: center;
+    margin: 0;
+    white-space: nowrap;
+  }
+  
+  .title-container .highlight {
+    color: #d4af37;
+    display: block;
+  }
+  
+  .title-container .normal {
+    color: #ffffff;
+  }
+  
+  .carousel-wrapper {
+    width: 100%;
+    overflow: hidden;
+    cursor: grab;
+    touch-action: pan-y;
+  }
+  
+  .carousel-wrapper:active {
+    cursor: grabbing;
+  }
+  
+  .carousel {
+    display: flex;
+    width: 100%;
+    transition: transform 0.3s ease;
+    will-transform: transform;
+  }
+  
+  .slide {
+    min-width: 100%;
+    width: 100%;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .slide img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 90vh;
+    object-fit: contain;
+    background: #1a1a1a;
+    border: 0;
+    border-left: 0;
+    border-right: 0;
+    outline: 0;
+  }
+  
+  .dots-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .bodega-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid rgba(212, 175, 55, 0.4);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    flex-shrink: 0;
+  }
+  
+  .bodega-dot:hover { 
+    background: rgba(212, 175, 55, 0.3);
+    border-color: rgba(212, 175, 55, 0.6);
+  }
+  
+  .bodega-dot.active {
+    background: #d4af37;
+    border-color: #d4af37;
+    transform: scale(1.3);
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.8);
+  }
+
+@media (max-width: 768px) {
+    .title-container { margin-bottom: 1.5rem; gap: 1rem; padding: 0.75rem; }
+    .title-container .line { display: none; }
+    .slide img { max-height: 90vh; }
+    .dots-container { gap: 10px; margin-top: 1rem; }
+    .bodega-dot { width: 12px; height: 12px; }
+  }
+  
+  @media (max-width: 480px) {
+    .title-container { gap: 0.5rem; margin-bottom: 0.75rem; padding: 0.5rem; }
+    .title-container .line { display: none; }
+    .title-container h2 { font-size: clamp(0.7rem, 3.5vw, 0.85rem); }
+    .slide img { max-height: 90vh; }
+    .dots-container { gap: 8px; margin-top: 0.5rem; padding: 0.5rem; }
+    .bodega-dot { width: 10px; height: 10px; }
+  }
+</style>
