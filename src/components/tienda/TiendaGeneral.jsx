@@ -41,6 +41,7 @@ const [ nameCategory, setNameCategory ] = useState(stateNameCategory);
 const [viewCart, setViewCart] = useState(stateViewCart)
 const [ productsLimit, setProductsLimit ] = useState(10);
 const [ limitLabel, setLimitLabel ] = useState("Mostrar: 10");
+const [ currentPage, setCurrentPage ] = useState(1);
 const [ searchTerm, setSearchTerm ] = useState("");
 
 
@@ -191,9 +192,15 @@ const [numBadge, setNumBadge] = useState(0);
   const selectLimit = (option) => {
     setProductsLimit(option.value);
     setLimitLabel(`Mostrar: ${option.value}`);
+    setCurrentPage(1);
+  };
+
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
   };
 
   const handleSearch = (term) => {
+    setCurrentPage(1);
     setSearchTerm(term);
     
     if (term.trim() === "") {
@@ -209,12 +216,14 @@ const [numBadge, setNumBadge] = useState(0);
   }
 
   const clearSearch = () => {
+    setCurrentPage(1);
     setSearchTerm("");
     setViewProducts(stateProducts);
     setNameCategory("Productos");
   }
 
   const selectOrder = (option) => {
+    setCurrentPage(1);
     
     switch(option.value) {
 
@@ -254,7 +263,8 @@ const [numBadge, setNumBadge] = useState(0);
   };
 
   const selectCategory = ( categories ) => {
-
+        setCurrentPage(1);
+        
         if(!categories || categories.length === 0) {
             setViewProducts(stateProducts);
             setNameCategory(stateNameCategory);
@@ -384,25 +394,50 @@ const [numBadge, setNumBadge] = useState(0);
                                     handleViewCart = {() => handleViewCart()}
                                 />
                             </div>
+                            <div className="row-pagination">
+                                <div className="pagination-controls">
+                                    <button 
+                                        className="page-btn" 
+                                        onClick={() => handlePageChange(currentPage - 1)}
+                                        disabled={currentPage === 1}
+                                    >
+                                        &lt;
+                                    </button>
+                                    <span className="page-info">
+                                        {currentPage} / {Math.max(1, Math.ceil(viewProducts.length / productsLimit))}
+                                    </span>
+                                    <button 
+                                        className="page-btn"
+                                        onClick={() => handlePageChange(currentPage + 1)}
+                                        disabled={currentPage >= Math.ceil(viewProducts.length / productsLimit)}
+                                    >
+                                        &gt;
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                         <div className="list-products" key={viewProducts.map(p => p.id).join("-")}>
 
                             {
-                                viewProducts.slice(0, productsLimit).map(
-                                    (product) => (
-                                        <Card 
-                                            key={product.id}
-                                            id={product.id}
-                                            name={product.name}
-                                            price={product.price}
-                                            description={product.description}
-                                            isThereStock={product.stock} 
-                                            upToCart2={ handleSetOrderList }
-                                            tilde={product.config?.addTilde}
-                                            screenOption={handleChangeScreenProducts}
-                                        />
-                                    )
-                                )
+                                (() => {
+                                    const start = (currentPage - 1) * productsLimit;
+                                    const end = start + productsLimit;
+                                    return viewProducts.slice(start, end).map(
+                                        (product) => (
+                                            <Card 
+                                                key={product.id}
+                                                id={product.id}
+                                                name={product.name}
+                                                price={product.price}
+                                                description={product.description}
+                                                isThereStock={product.stock} 
+                                                upToCart2={ handleSetOrderList }
+                                                tilde={product.config?.addTilde}
+                                                screenOption={handleChangeScreenProducts}
+                                            />
+                                        )
+                                    );
+                                })()
                             }
                         </div>
                     </section> 
