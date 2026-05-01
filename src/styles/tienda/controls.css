@@ -19,10 +19,9 @@
 
 /* ===== DESKTOP LAYOUT (min-width 768px) - 2 ROWS ===== */
 .row-desktop-controls {
-    display: none; /* Hidden by default, shown via media query */
+    display: none;
 }
 
-/* Desktop First row: Search + Dropdowns + Cart */
 .desktop-row-1 {
     display: flex;
     flex-wrap: wrap;
@@ -32,7 +31,6 @@
     width: 100%;
 }
 
-/* Desktop Second row: Pagination */
 .desktop-row-2 {
     display: flex;
     justify-content: center;
@@ -42,10 +40,9 @@
 
 /* ===== MOBILE LAYOUT (max-width 768px) - 3 ROWS ===== */
 .row-mobile-controls {
-    display: none; /* Hidden by default, shown via media query */
+    display: none;
 }
 
-/* Mobile First row: Search */
 .mobile-row-1 {
     display: flex;
     justify-content: center;
@@ -54,7 +51,6 @@
     margin-bottom: 10px;
 }
 
-/* Mobile Second row: Dropdowns + Cart - flex-end */
 .mobile-row-2 {
     display: flex;
     flex-direction: row;
@@ -65,7 +61,6 @@
     width: 100%;
 }
 
-/* Mobile Third row: Pagination */
 .mobile-row-3 {
     display: flex;
     justify-content: center;
@@ -139,7 +134,6 @@
 
 /* ===== DESKTOP MEDIA QUERY (min-width 768px) ===== */
 @media screen and (min-width: 768px) {
-    /* Show desktop, hide mobile */
     .row-desktop-controls {
         display: flex;
         flex-direction: column;
@@ -151,7 +145,6 @@
         display: none !important;
     }
     
-    /* Compact box-dropdown for desktop */
     .box-dropdown {
         padding: 10px;
         gap: 10px;
@@ -160,19 +153,17 @@
 
 /* ===== MOBILE/TABLET MEDIA QUERY (max-width 768px) ===== */
 @media screen and (max-width: 768px) {
-    /* Hide desktop, show mobile */
     .row-desktop-controls {
         display: none !important;
     }
     
     .row-mobile-controls {
-        display: flex;
+        display: flex !important;
         flex-direction: column;
         gap: 10px;
         width: 100%;
     }
     
-    /* Mobile box-dropdown styles */
     .box-dropdown {
         display: flex;
         flex-direction: column;
@@ -181,7 +172,6 @@
         padding: 0.75rem;
         margin-top: 0.4rem;
         margin-bottom: 0.4rem;
-        background: #1a1a1a;
         border-radius: 16px;
         box-shadow: 0 2px 12px rgba(212, 175, 55, 0.15);
         box-sizing: border-box;
@@ -189,14 +179,15 @@
         overflow: visible;
     }
     
-    /* Mobile first row: Search centered with 90% width */
-    .mobile-row-1 {
-        justify-content: center;
+    .row-mobile-controls .mobile-row-2 {
+        background: transparent !important;
     }
     
     .mobile-row-1 .search-wrapper {
         width: 90%;
         max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
         border-radius: 10px;
         border: 1px solid #333 !important;
         transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -215,18 +206,6 @@
         background: transparent;
     }
     
-    /* Mobile second row: Dropdowns + Cart in SAME ROW with flex-end */
-    .mobile-row-2 {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-    }
-    
-    /* Mobile third row: Pagination centered */
-    .mobile-row-3 {
-        justify-content: center;
-    }
-    
     .sec-products .box-dropdown > button,
     .sec-products .box-dropdown > div {
         display: inline-flex;
@@ -237,6 +216,15 @@
         background: #2a2a2a;
         transition: all 0.2s ease;
         box-sizing: border-box;
+    }
+    
+    /* Override background for mobile-row-2 elements */
+    .mobile-row-2 > button,
+    .mobile-row-2 > div,
+    .mobile-row-2 .dropdown,
+    .mobile-row-2 .box-btn-cart {
+        background: transparent !important;
+        border-color: #333 !important;
     }
     
     .sec-info-product .box-dropdown {
@@ -257,7 +245,7 @@
     }
 }
 
-/* ===== RESPONSIVE: max-width 480px ===== */
+/* ===== MOBILE SPECIFIC (max-width 480px) ===== */
 @media screen and (max-width: 480px) {
     .box-dropdown {
         width: 95%;
@@ -265,26 +253,17 @@
         gap: 10px;
     }
     
-    /* Mobile first row: Search */
     .mobile-row-1 .search-wrapper {
-        width: 90%;
-        max-width: 90%;
         margin-left: auto;
         margin-right: auto;
     }
     
-    /* Mobile second row: Controls */
-    .mobile-row-2 {
-        gap: 8px;
-    }
-    
-    .sec-products .box-dropdown .mobile-row-2 .dropdown,
-    .sec-products .box-dropdown .mobile-row-2 .box-btn-cart {
+    .mobile-row-2 .dropdown,
+    .mobile-row-2 .box-btn-cart {
         margin-left: 0;
         width: auto;
     }
     
-    /* Mobile third row: Pagination */
     .mobile-row-3 {
         width: 100%;
     }
@@ -306,23 +285,30 @@
     }
 }
 
-/* ===== RESPONSIVE: max-width 360px ===== */
-@media screen and (max-width: 360px) {
+/* ===== SMALL MOBILE (max-width 380px) ===== */
+@media screen and (max-width: 380px) {
     .box-dropdown {
+        height: 220px;
         width: 98%;
         padding: 8px;
     }
     
-    /* Mobile first row: Search */
-    .mobile-row-1 .search-wrapper {
-        width: 90%;
+    .row-mobile-controls {
+        transform: translateY(80px);
     }
-    
-    /* Mobile second row: Controls */
+    /* Mobile second row: Keep all 3 components in SAME ROW */
     .mobile-row-2 {
         gap: 6px;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-end;
     }
     
+    .mobile-row-2 > * {
+        flex-shrink: 1;
+        min-width: 0;
+    }
+
     .sec-products .box-dropdown > button,
     .sec-products .box-dropdown > div {
         display: inline-flex;
@@ -333,7 +319,45 @@
         transition: none;
     }
     
-    /* Mobile third row: Pagination */
+    .pagination-controls {
+        padding: 4px 8px;
+        gap: 6px;
+    }
+    
+    .page-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+}
+
+    .row-mobile-controls {
+        
+        display: flex;
+        justify-content: center;
+    }
+    
+    .mobile-row-2,
+    .mobile-row-1,
+    .mobile-row-3 {
+        gap: 6px;
+        
+    }
+
+    .mobile-row-2 .dropdown {
+        
+    }
+
+    .sec-products .box-dropdown > button,
+    .sec-products .box-dropdown > div {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        background: transparent;
+        transition: none;
+    }
+    
     .pagination-controls {
         padding: 4px 8px;
         gap: 6px;
