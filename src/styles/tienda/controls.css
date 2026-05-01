@@ -242,7 +242,7 @@
         box-shadow: 0 2px 12px rgba(212, 175, 55, 0.15);
         padding: 15px;
     }
-}
+
     
     .row-mobile-controls {
         display: none !important;
@@ -274,7 +274,7 @@
         pointer-events: auto;
         opacity: 1;
     }
-}
+
 @media (min-width:769px) AND (max-width:906px) {
     .row-desktop-controls {
         height: 150px;

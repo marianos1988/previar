@@ -271,17 +271,22 @@ const [numBadge, setNumBadge] = useState(0);
             setNameCategory(stateNameCategory);
         } else {
             let newViewProducts = [];
-
+            
             stateProducts.forEach(
                 (product) => {
-                    if(categories.includes(product.category)) {
-                        newViewProducts.push(product)
+                        if(categories.includes(product.category)) {
+                            newViewProducts.push(product)
+                        }
                     }
-                }
             )
             setViewProducts(newViewProducts);
             setNameCategory(categories.length > 1 ? `${categories.length} categorías` : categories[0]);
-
+            
+        }
+        
+        // If coming from sec-info-product, go back to list view
+        if(changeScreenProducts.optionScreen === 2) {
+            setChangeScreenProducts(initialStateChangeScreenProducts);
         }
   }
 
