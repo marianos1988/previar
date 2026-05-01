@@ -127,10 +127,23 @@
 }
 
 /* ===== DISABLED STATE FOR INFO-PRODUCT ===== */
-/* Hide search and pagination rows in sec-info-product */
-.sec-info-product .mobile-row-1,
-.sec-info-product .mobile-row-3 {
-    display: none !important;
+/* Mobile: disable dropdowns and cart in mobile-row-2 */
+.sec-info-product .mobile-row-2 .dropdown,
+.sec-info-product .mobile-row-2 .box-btn-cart {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+/* Desktop: disable ONLY dropdowns in desktop-row-1, keep cart enabled */
+.sec-info-product .desktop-row-1 .dropdown {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+/* Keep cart button functional in desktop */
+.sec-info-product .desktop-row-1 .box-btn-cart {
+    pointer-events: auto;
+    opacity: 1;
 }
 
 /* Show ONLY mobile-row-2 with dropdowns + cart */
@@ -177,6 +190,89 @@
     .box-dropdown {
         padding: 10px;
         gap: 10px;
+    }
+
+    /* BLACK BACKGROUND for sec-info-product on PC */
+    .sec-info-product .box-dropdown {
+        background-color: #1a1a1a !important;
+        border-radius: 16px;
+        box-shadow: 0 2px 12px rgba(212, 175, 55, 0.15);
+        padding: 15px;
+    }
+
+    /* HIDE search and pagination in sec-info-product for desktop */
+    .sec-info-product .desktop-row-1 .search-wrapper,
+    .sec-info-product .desktop-row-2 {
+        display: none !important;
+    }
+
+    /* Show ONLY dropdowns + cart in sec-info-product */
+    .sec-info-product .desktop-row-1 {
+        display: flex !important;
+    }
+
+    /* Disable dropdowns but keep them visible */
+    .sec-info-product .desktop-row-1 .dropdown {
+        pointer-events: none;
+        opacity: 0.6;
+        background: transparent !important;
+        border-color: #333 !important;
+    }
+
+    /* Keep cart button functional */
+    .sec-info-product .desktop-row-1 .box-btn-cart {
+        pointer-events: auto;
+        opacity: 1;
+    }
+}
+    
+    .row-mobile-controls {
+        display: none !important;
+    }
+    
+    .box-dropdown {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    /* BLACK BACKGROUND for sec-info-product on PC */
+    .sec-info-product .box-dropdown {
+        background-color: #1a1a1a !important;
+        border-radius: 16px;
+        box-shadow: 0 2px 12px rgba(212, 175, 55, 0.15);
+        padding: 15px;
+    }
+}
+    
+    .row-mobile-controls {
+        display: none !important;
+    }
+    
+    .box-dropdown {
+        padding: 10px;
+        gap: 10px;
+    }
+    
+    /* HIDE search and pagination in sec-info-product for desktop */
+    .sec-info-product .desktop-row-1 .search-wrapper,
+    .sec-info-product .desktop-row-2 {
+        display: none !important;
+    }
+    
+    /* Show ONLY dropdowns + cart in sec-info-product */
+    .sec-info-product .desktop-row-1 {
+        display: flex !important;
+    }
+    
+    /* Disable dropdowns but keep cart enabled in desktop */
+    .sec-info-product .desktop-row-1 .dropdown {
+        pointer-events: none;
+        opacity: 0.6;
+    }
+    
+    .sec-info-product .desktop-row-1 .box-btn-cart {
+        pointer-events: auto;
+        opacity: 1;
     }
 }
 @media (min-width:769px) AND (max-width:906px) {
