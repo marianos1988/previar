@@ -127,11 +127,84 @@
 }
 
 /* ===== DISABLED STATE FOR INFO-PRODUCT ===== */
-/* Mobile: disable dropdowns and cart in mobile-row-2 */
+/* Hide search and pagination rows in sec-info-product for ALL screen sizes */
+.sec-info-product .mobile-row-1,
+.sec-info-product .mobile-row-3,
+.sec-info-product .desktop-row-2,
+.sec-info-product .pagination-controls {
+    display: none !important;
+}
+
+/* Show ONLY mobile-row-2 with dropdowns + cart in sec-info-product */
+.sec-info-product .mobile-row-2 {
+    display: flex !important;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+/* Desktop: hide search and pagination, show dropdowns + cart */
+@media screen and (min-width: 768px) {
+    .sec-info-product .desktop-row-1 .search-wrapper,
+    .sec-info-product .desktop-row-2 {
+        display: none !important;
+    }
+    
+    /* Show ONLY dropdowns + cart in sec-info-product */
+    .sec-info-product .desktop-row-1 {
+        display: flex !important;
+    }
+}
+
+/* Disable dropdowns but keep them visible */
 .sec-info-product .mobile-row-2 .dropdown,
-.sec-info-product .mobile-row-2 .box-btn-cart {
+.sec-info-product .desktop-row-1 .dropdown {
     pointer-events: none;
     opacity: 0.6;
+    background: transparent !important;
+    border-color: #333 !important;
+}
+
+/* Keep cart button functional and visible */
+.sec-info-product .mobile-row-2 .box-btn-cart,
+.sec-info-product .desktop-row-1 .box-btn-cart {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+/* Show ONLY mobile-row-2 with dropdowns + cart in sec-info-product */
+.sec-info-product .mobile-row-2 {
+    display: flex !important;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+/* Desktop: hide search and pagination in sec-info-product */
+@media screen and (min-width: 768px) {
+    .sec-info-product .desktop-row-1 .search-wrapper,
+    .sec-info-product .desktop-row-2 {
+        display: none !important;
+    }
+    
+    /* Show ONLY dropdowns + cart in sec-info-product */
+    .sec-info-product .desktop-row-1 {
+        display: flex !important;
+    }
+}
+
+/* Disable dropdowns but keep them visible */
+.sec-info-product .mobile-row-2 .dropdown,
+.sec-info-product .desktop-row-1 .dropdown {
+    pointer-events: none;
+    opacity: 0.6;
+    background: transparent !important;
+    border-color: #333 !important;
+}
+
+/* Keep cart button functional and visible */
+.sec-info-product .mobile-row-2 .box-btn-cart,
+.sec-info-product .desktop-row-1 .box-btn-cart {
+    pointer-events: auto;
+    opacity: 1;
 }
 
 /* Desktop: disable ONLY dropdowns in desktop-row-1, keep cart enabled */
