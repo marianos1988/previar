@@ -1,5 +1,6 @@
 ---
 import { clientConfig } from "../config/clientConfig";
+import Audio from "./Audio.astro";
 
 const logo = clientConfig.brand.logo;
 const CLIENT_LOGO = logo?.src || logo;
@@ -8,6 +9,7 @@ const CLIENT_SLOGAN = clientConfig.brand.slogan;
 ---
 
 <header class="header">
+  <Audio />
   <div class="header-bg"></div>
   <div class="header-accent"></div>
   <div class="bubbles" aria-hidden="true">

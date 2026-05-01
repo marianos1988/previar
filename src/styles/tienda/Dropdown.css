@@ -73,6 +73,9 @@
   color: #f5f5f5;
   font-family: 'Montserrat', sans-serif;
   font-size: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
 }
 
 .dropdown-item:hover {
@@ -151,6 +154,9 @@
     text-align: center;
     border-bottom: 1px solid rgba(212, 175, 55, 0.1);
     color: #f5f5f5;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
   }
 
   .dropdown-item:last-child {

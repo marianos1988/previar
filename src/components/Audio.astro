@@ -1,0 +1,189 @@
+---
+const tracks = [
+  { src: '/audio/1.mp3', name: 'Track 1' },
+  { src: '/audio/2.mp3', name: 'Track 2' },
+];
+---
+
+<div class="audio-player">
+  <audio id="audioPlayer"></audio>
+  
+  <div class="player-controls">
+    <div class="music-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+      </svg>
+    </div>
+    
+    <button class="btn-play" id="btnPlay" aria-label="Reproducir">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+    </button>
+    
+    <button class="btn-stop" id="btnStop" aria-label="Detener">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <rect x="6" y="6" width="12" height="12"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script define:vars={{ tracks }}>
+  const audioPlayer = document.getElementById('audioPlayer');
+  const btnPlay = document.getElementById('btnPlay');
+  const btnStop = document.getElementById('btnStop');
+  const musicIcon = document.querySelector('.music-icon');
+  
+  let currentTrack = 0;
+  let isPlaying = false;
+  const isFirstVisit = !localStorage.getItem('audioVisited');
+  
+  function loadTrack(index) {
+    audioPlayer.src = tracks[index].src;
+    currentTrack = index;
+    if (index === 1) {
+      audioPlayer.loop = true;
+    } else {
+      audioPlayer.loop = false;
+    }
+  }
+  
+  function togglePlay() {
+    if (isPlaying) {
+      audioPlayer.pause();
+      isPlaying = false;
+      btnPlay.classList.remove('playing');
+      musicIcon.classList.remove('playing');
+      localStorage.setItem('audioPlaying', 'false');
+    } else {
+      audioPlayer.play();
+      isPlaying = true;
+      btnPlay.classList.add('playing');
+      musicIcon.classList.add('playing');
+      localStorage.setItem('audioPlaying', 'true');
+      localStorage.setItem('audioVisited', 'true');
+    }
+  }
+  
+  function stopAudio() {
+    audioPlayer.pause();
+    audioPlayer.currentTime = 0;
+    isPlaying = false;
+    btnPlay.classList.remove('playing');
+    musicIcon.classList.remove('playing');
+    localStorage.setItem('audioPlaying', 'false');
+  }
+  
+  btnPlay.addEventListener('click', togglePlay);
+  btnStop.addEventListener('click', stopAudio);
+  
+  audioPlayer.addEventListener('ended', () => {
+    if (currentTrack === 0) {
+      loadTrack(1);
+      audioPlayer.play();
+      isPlaying = true;
+      btnPlay.classList.add('playing');
+      musicIcon.classList.add('playing');
+    }
+  });
+  
+  loadTrack(0);
+  
+  if (isFirstVisit) {
+    localStorage.setItem('audioVisited', 'true');
+    audioPlayer.play().then(() => {
+      isPlaying = true;
+      btnPlay.classList.add('playing');
+      musicIcon.classList.add('playing');
+    }).catch(() => {});
+  } else {
+    const wasPlaying = localStorage.getItem('audioPlaying') === 'true';
+    if (wasPlaying) {
+      audioPlayer.play().then(() => {
+        isPlaying = true;
+        btnPlay.classList.add('playing');
+        musicIcon.classList.add('playing');
+      }).catch(() => {});
+    }
+  }
+</script>
+
+<style>
+  .audio-player {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    z-index: 10;
+  }
+  
+  .player-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 6px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+  }
+  
+  .btn-play, .btn-stop {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: #d4af37;
+    color: #0d0d0d;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    padding: 0;
+  }
+  
+  .btn-play svg, .btn-stop svg {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .btn-play:hover, .btn-stop:hover {
+    background: #f5a623;
+    transform: scale(1.1);
+  }
+  
+  .btn-play.playing {
+    background: #f5a623;
+  }
+  
+  .music-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d4af37;
+  }
+  
+  .music-icon svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .music-icon.playing svg {
+    animation: bounce 0.6s ease infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+  }
+  
+  @media (max-width: 768px) {
+    .audio-player {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      margin-top: 0;
+    }
+  }
+</style>

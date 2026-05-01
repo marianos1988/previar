@@ -9,6 +9,7 @@ import BtnCart from "./BtnCart";
 import BtnSearch from "./BtnSearch";
 import ProductCart from "./ProductCart";
 import BtnOrder from "./BtnOrder";
+import Controls from "./Controls";
 
 
 
@@ -41,6 +42,7 @@ const [ nameCategory, setNameCategory ] = useState(stateNameCategory);
 const [viewCart, setViewCart] = useState(stateViewCart)
 const [ productsLimit, setProductsLimit ] = useState(10);
 const [ limitLabel, setLimitLabel ] = useState("Mostrar: 10");
+const [ currentPage, setCurrentPage ] = useState(1);
 const [ searchTerm, setSearchTerm ] = useState("");
 
 
@@ -191,9 +193,15 @@ const [numBadge, setNumBadge] = useState(0);
   const selectLimit = (option) => {
     setProductsLimit(option.value);
     setLimitLabel(`Mostrar: ${option.value}`);
+    setCurrentPage(1);
+  };
+
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
   };
 
   const handleSearch = (term) => {
+    setCurrentPage(1);
     setSearchTerm(term);
     
     if (term.trim() === "") {
@@ -209,12 +217,14 @@ const [numBadge, setNumBadge] = useState(0);
   }
 
   const clearSearch = () => {
+    setCurrentPage(1);
     setSearchTerm("");
     setViewProducts(stateProducts);
     setNameCategory("Productos");
   }
 
   const selectOrder = (option) => {
+    setCurrentPage(1);
     
     switch(option.value) {
 
@@ -254,7 +264,8 @@ const [numBadge, setNumBadge] = useState(0);
   };
 
   const selectCategory = ( categories ) => {
-
+        setCurrentPage(1);
+        
         if(!categories || categories.length === 0) {
             setViewProducts(stateProducts);
             setNameCategory(stateNameCategory);
@@ -365,44 +376,44 @@ const [numBadge, setNumBadge] = useState(0);
                 (changeScreenProducts.optionScreen === 1) && (
                     
                     <section className="sec-products">
-                        <div className="box-dropdown">
-                            <BtnSearch 
-                                searchTerm={searchTerm}
-                                onSearch={handleSearch}
-                                onClear={clearSearch}
-                            />
-                            <div className="row-controls">
-                                <Dropdown
-                                    label="Ordenar por:" options={options} onSelect={ selectOrder }
-                                    moodInfo={false}                            />
-                                <Dropdown
-                                    label={limitLabel} options={limitOptions} onSelect={ selectLimit }
-                                    moodInfo={false}
-                                />
-                                <BtnCart 
-                                    ordersList = {numBadge}
-                                    handleViewCart = {() => handleViewCart()}
-                                />
-                            </div>
-                        </div>
+                        <Controls 
+                            searchTerm={searchTerm}
+                            onSearch={handleSearch}
+                            onClear={clearSearch}
+                            options={options}
+                            selectOrder={selectOrder}
+                            limitLabel={limitLabel}
+                            limitOptions={limitOptions}
+                            selectLimit={selectLimit}
+                            numBadge={numBadge}
+                            handleViewCart={() => handleViewCart()}
+                            currentPage={currentPage}
+                            viewProducts={viewProducts}
+                            productsLimit={productsLimit}
+                            handlePageChange={handlePageChange}
+                        />
                         <div className="list-products" key={viewProducts.map(p => p.id).join("-")}>
-
+ 
                             {
-                                viewProducts.slice(0, productsLimit).map(
-                                    (product) => (
-                                        <Card 
-                                            key={product.id}
-                                            id={product.id}
-                                            name={product.name}
-                                            price={product.price}
-                                            description={product.description}
-                                            isThereStock={product.stock} 
-                                            upToCart2={ handleSetOrderList }
-                                            tilde={product.config?.addTilde}
-                                            screenOption={handleChangeScreenProducts}
-                                        />
-                                    )
-                                )
+                                (() => {
+                                    const start = (currentPage - 1) * productsLimit;
+                                    const end = start + productsLimit;
+                                    return viewProducts.slice(start, end).map(
+                                        (product) => (
+                                            <Card 
+                                                key={product.id}
+                                                id={product.id}
+                                                name={product.name}
+                                                price={product.price}
+                                                description={product.description}
+                                                isThereStock={product.stock} 
+                                                upToCart2={ handleSetOrderList }
+                                                tilde={product.config?.addTilde}
+                                                screenOption={handleChangeScreenProducts}
+                                            />
+                                        )
+                                    );
+                                })()
                             }
                         </div>
                     </section> 
@@ -415,29 +426,28 @@ const [numBadge, setNumBadge] = useState(0);
                     
                     <section className="sec-info-product">
 
-                        <div className="box-dropdown">
-                            <BtnSearch 
-                                searchTerm={searchTerm}
-                                onSearch={handleSearch}
-                                onClear={clearSearch}
-                            />
-                            <div className="row-controls">
-                                <Dropdown 
-                                    label="Ordenar por:" options={options} onSelect={ selectOrder }
-                                    moodInfo={true}
-                                />
-                                <BtnCart 
-                                    ordersList = {numBadge}
-                                    handleViewCart = {() => handleViewCart()}
-                                />
-                            </div>
-                        </div>
+                        <Controls 
+                            searchTerm={searchTerm}
+                            onSearch={handleSearch}
+                            onClear={clearSearch}
+                            options={options}
+                            selectOrder={selectOrder}
+                            limitLabel={limitLabel}
+                            limitOptions={limitOptions}
+                            selectLimit={selectLimit}
+                            numBadge={numBadge}
+                            handleViewCart={() => handleViewCart()}
+                            currentPage={currentPage}
+                            viewProducts={viewProducts}
+                            productsLimit={productsLimit}
+                            handlePageChange={handlePageChange}
+                        />
                         <div className="info-product">
-
+ 
                             {
-                                viewProducts.map(
-                                    (product) => (
-                                        (product.id === changeScreenProducts.id) && (
+                                viewProducts
+                                    .filter(product => product.id === changeScreenProducts.id)
+                                    .map(product => (
                                         <CardInfo 
                                             key={product.id}
                                             id={product.id}
@@ -448,20 +458,15 @@ const [numBadge, setNumBadge] = useState(0);
                                             upToCart2={ handleSetOrderList }
                                             tilde={product.config?.addTilde}
                                             screenOption={handleChangeScreenProducts}
-
                                         />  
-                                    )
-
-                                    )
-                                )
+                                    ))
                             }
                         </div>
                     </section> 
-                )
-            }
+                 )
+             }
 
-
-            <section className={(viewCart) ? `sec-cart active` : `sec-cart`}>
+             <section className={(viewCart) ? `sec-cart active` : `sec-cart`}>
                 <div className="box-close">
                     <button onClick={()=>handleViewCart()} className="btn-close">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>

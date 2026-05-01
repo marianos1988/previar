@@ -1,0 +1,353 @@
+/* ===== Controls Component Styles ===== */
+
+/* Main container */
+.box-dropdown {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.box-dropdown > * {
+    width: 100%;
+}
+
+/* First row: Search - Mobile/Tablet */
+.row-search {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Second row: Dropdowns + Cart - PC layout (min-width 768px) */
+.row-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Third row: Pagination - centered */
+.row-pagination {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Search wrapper white background */
+.sec-products .box-dropdown .search-wrapper,
+.sec-info-product .box-dropdown .search-wrapper {
+    background-color: #ffffff !important;
+    border: 1px solid #ccc !important;
+    border-radius: 10px !important;
+}
+
+/* Second row: Pagination - centered */
+.row-pagination {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.page-btn {
+    background-color: transparent;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: #d4af37;
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.page-btn:hover:not(:disabled) {
+    background-color: rgba(212, 175, 55, 0.1);
+    border-color: rgba(212, 175, 55, 0.5);
+    transform: translateY(-1px);
+}
+
+.page-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.page-info {
+    color: #d4af37;
+    font-size: 14px;
+    font-weight: 500;
+    min-width: 60px;
+    text-align: center;
+}
+
+/* Disabled state for info-product section */
+.sec-info-product .row-controls .dropdown,
+.sec-info-product .row-controls .box-btn-cart {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+/* PC Layout (min-width 768px) - Space between rows */
+@media screen and (min-width: 768px) {
+    .row-controls {
+        margin-bottom: 15px;
+    }
+}
+
+/* Responsive: max-width 768px - Tablet/Mobile - 3 rows */
+@media screen and (max-width: 768px) {
+    .box-dropdown {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+        padding: 0.75rem;
+        margin-top: 0.4rem;
+        margin-bottom: 0.4rem;
+        background: #1a1a1a;
+        border-radius: 16px;
+        box-shadow: 0 2px 12px rgba(212, 175, 55, 0.15);
+        box-sizing: border-box;
+        max-width: 100%;
+        overflow: visible;
+    }
+
+    /* First row: Search centered with 90% width */
+    .row-search {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .row-search .search-wrapper {
+        width: 90%;
+        max-width: 90%;
+        border-radius: 10px;
+        border: 1px solid #333 !important;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        box-sizing: border-box;
+        background-color: #ffffff !important;
+    }
+
+    .row-search .search-wrapper:focus-within {
+        border-color: #d4af37 !important;
+        box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25) !important;
+    }
+
+    .row-search .search-input {
+        width: 100%;
+        box-sizing: border-box;
+        background: transparent;
+    }
+
+    /* Second row: Dropdowns + Cart */
+    .row-controls {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .sec-products .box-dropdown > button,
+    .sec-products .box-dropdown > div {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        border: 1px solid #333;
+        background: #2a2a2a;
+        transition: all 0.2s ease;
+        box-sizing: border-box;
+    }
+
+    /* Third row: Pagination centered */
+    .row-pagination {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .sec-info-product .box-dropdown {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+        padding: 0.75rem;
+        margin-top: 0.4rem;
+        margin-bottom: 0.4rem;
+        background: #1a1a1a;
+        border-radius: 16px;
+        box-shadow: 0 2px 12px rgba(212, 175, 55, 0.15);
+    }
+
+    .sec-info-product .box-dropdown > * {
+        height: 44px;
+        width: 100%;
+    }
+}
+
+/* Responsive: max-width 480px - 3 rows maintained */
+@media screen and (max-width: 480px) {
+    .box-dropdown {
+        width: 95%;
+        padding: 10px;
+        gap: 10px;
+    }
+    
+    /* First row: Search */
+    .row-search {
+        width: 100%;
+    }
+    
+    .row-search .search-wrapper {
+        width: 90%;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* Second row: Controls */
+    .row-controls {
+        flex-direction: column;
+        gap: 8px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sec-products .box-dropdown .row-controls .dropdown,
+    .sec-products .box-dropdown .row-controls .box-btn-cart {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    /* Third row: Pagination */
+    .row-pagination {
+        width: 100%;
+    }
+    
+    .pagination-controls {
+        padding: 6px 12px;
+        gap: 8px;
+    }
+    
+    .page-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+    
+    .page-info {
+        font-size: 12px;
+        min-width: 50px;
+    }
+}
+    
+    .row-controls {
+        flex-direction: column;
+        gap: 8px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sec-products .box-dropdown .search-wrapper {
+        order: 1;
+        border-radius: 10px;
+        border: 1px solid #333;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .row-controls {
+        flex-direction: column;
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .sec-products .box-dropdown .search-wrapper {
+        order: 1;
+    }
+
+    .sec-products .box-dropdown > button,
+    .sec-products .box-dropdown > div {
+        order: 2;
+        width: 100%;
+    }
+
+    .sec-products .box-dropdown .row-controls .dropdown,
+    .sec-products .box-dropdown .row-controls .box-btn-cart {
+        margin-left: 0;
+    }
+    
+    .pagination-controls {
+        padding: 6px 12px;
+        gap: 8px;
+    }
+    
+    .page-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+    
+    .page-info {
+        font-size: 12px;
+        min-width: 50px;
+    }
+}
+
+/* Responsive: max-width 360px */
+@media screen and (max-width: 360px) {
+    .box-dropdown {
+        width: 98%;
+        padding: 8px;
+    }
+    
+    .row-controls {
+        gap: 6px;
+    }
+
+    .sec-products .box-dropdown > button,
+    .sec-products .box-dropdown > div {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        background: transparent;
+        transition: none;
+    }
+    
+    .pagination-controls {
+        padding: 4px 8px;
+        gap: 6px;
+    }
+    
+    .page-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+}

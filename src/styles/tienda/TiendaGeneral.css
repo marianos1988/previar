@@ -73,21 +73,6 @@
     padding: 1rem;
 }
 
-.sec-products .box-dropdown {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 0.5rem;
-}
-
-.box-dropdown > * {
-    height: 42px;
-    display: flex;
-    align-items: center;
-}
-
 .sec-products .list-products {
     margin: 0;
     padding: 0.5rem;
@@ -109,23 +94,6 @@
     box-sizing: border-box;
     z-index: 1;
     padding: 1rem;
-}
-
-.sec-info-product .box-dropdown {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
-    padding-right: 1rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.sec-info-product .box-dropdown > * {
-    height: 42px;
-    display: flex;
-    align-items: center;
 }
 
 .sec-info-product .info-product {
@@ -458,7 +426,7 @@
     .sec-products .box-dropdown .row-controls .box-btn-cart {
         margin-left: 0;
     }
-        height: auto;
+
     }
 
     .container-merch.active .sec-filters {
@@ -486,19 +454,6 @@
         max-width: 100%;
         overflow: visible;
         z-index: 9998;
-    }
-
-    .sec-products .box-dropdown .search-wrapper {
-        width: 100%;
-        border-radius: 10px;
-        border: 1px solid #333;
-        transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        box-sizing: border-box;
-    }
-
-    .sec-products .box-dropdown .search-wrapper:focus-within {
-        border-color: #d4af37 !important;
-        box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25) !important;
     }
 
     .sec-products .box-dropdown .search-input {
@@ -572,7 +527,7 @@
     .sec-info-product .info-product {
         padding: 0.25rem;
     }
-}
+
 
 @media (max-width: 480px) {
     .sec-tittles {
@@ -640,11 +595,6 @@
         transition: border-color 0.3s ease, box-shadow 0.3s ease;
         box-sizing: border-box;
         width: 100%;
-    }
-
-    .sec-products .box-dropdown .search-wrapper:focus-within {
-        border-color: #d4af37 !important;
-        box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25) !important;
     }
 
     .sec-products .box-dropdown .search-input {

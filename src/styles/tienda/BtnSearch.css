@@ -2,13 +2,24 @@
     margin-right: 2%;
     display: flex;
     align-items: center;
-    background: #fff;
+    background: transparent;
     border: 2px solid rgba(212, 175, 55, 0.3);
     border-radius: 12px;
     padding: 0 12px;
     height: 44px;
     box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    color: #1a1a1a;
+    flex: 1;
+    min-width: 100px;
 }
 
 .search-wrapper:focus-within {
@@ -37,6 +48,18 @@
 
 .search-input::placeholder {
     color: #aaa;
+}
+
+.search-wrapper.active {
+    background: #fff;
+}
+
+.search-wrapper.active .search-input {
+    color: #000;
+}
+
+.search-wrapper.active .search-input::placeholder {
+    color: #666;
 }
 
 .search-clear {
