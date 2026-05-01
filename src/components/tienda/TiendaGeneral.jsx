@@ -264,6 +264,7 @@ const [numBadge, setNumBadge] = useState(0);
   };
 
   const selectCategory = ( categories ) => {
+        console.log("selectCategory called with:", categories, "current screen:", changeScreenProducts.optionScreen);
         setCurrentPage(1);
         
         if(!categories || categories.length === 0) {
@@ -286,6 +287,7 @@ const [numBadge, setNumBadge] = useState(0);
         
         // If coming from sec-info-product, go back to list view
         if(changeScreenProducts.optionScreen === 2) {
+            console.log("Going back to list view from sec-info-product");
             setChangeScreenProducts(initialStateChangeScreenProducts);
         }
   }
