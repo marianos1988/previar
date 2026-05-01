@@ -96,7 +96,7 @@ export default function Controls({
                 </div>
                 
                 {/* Third row: Pagination */}
-                <div className="mobile-row-3">
+                <div className="mobile-row-3"> 
                     <div className="pagination-controls">
                         <button 
                             className="page-btn" 
